@@ -9,7 +9,7 @@ const useGetCompanyById = (companyId) => {
     useEffect(()=>{
         const fetchSingleCompany=async()=>{
             try{
-                const res= await axios.get(`https://jobportal-3-j6fo.onrender.com/api/v1/company/getcompanybyid/${companyId}`,{
+                const res= await axios.get(`https://jobportal-29rz.onrender.com/api/v1/company/getcompanybyid/${companyId}`,{
                     withCredentials:true,
                 })
                 if(res?.data?.success){
