@@ -17,7 +17,7 @@ const useGetAllAdminJobs = () => {
                 if(res.data.success){
                     dispatch(setAllAdminJobs(res.data.jobs))
                 }
-               // console.log("Adminjob",res)
+               //console.log("Adminjob",res)
 
             }catch(err){
                 console.error(err)

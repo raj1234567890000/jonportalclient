@@ -52,7 +52,7 @@ const PostAdminJob = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        `https://jobportal-3-j6fo.onrender.com/a1/v1/job/postjob`,
+        `https://jobportalbackend-2pcb.onrender.com/a1/v1/job/postjob`,
         input,
         {
           headers: {
