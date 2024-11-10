@@ -34,7 +34,7 @@ const Login = () => {
     e.preventDefault();
     try {
       dispatch(setLoading(true));
-      const res = await axios.post(`https://jobportalbackend-2pcb.onrender.com/api/v1/user/login`, input, { withCredentials:true,});
+      const res = await axios.post(`https://jobportalbackend-2pcb.onrender.com/api/v1/user/login`, input,{withCredentials:true,});
       if (res.data.sucess) {
       dispatch(setUser(res.data.user))
         navigate("/");
