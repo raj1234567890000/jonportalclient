@@ -57,9 +57,9 @@ if(res?.data?.success){
     toast(res.data.message)
     navigate('/admin/companies')
 }
-        }catch(err){
-            console.log(err)
-            toast.error("Something Wrong")
+        }catch(error){
+            console.log(error)
+            toast.error(error.response.data.message);
         }finally{
             setLoading(false)
         }

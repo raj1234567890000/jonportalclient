@@ -2,6 +2,7 @@ import { setSingleCompany } from "@/Redux/companySlice"
 import axios from "axios"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
+import { toast } from "sonner"
 
 
 const useGetCompanyById = (companyId) => {
@@ -17,8 +18,9 @@ const useGetCompanyById = (companyId) => {
                 }
                // console.log("job",res)
 
-            }catch(err){
-                console.error(err)
+            }catch(error){
+                toast.error(error.response.data.message);
+                console.error(error)
 
             }
         }

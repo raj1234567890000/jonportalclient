@@ -3,6 +3,7 @@ import { setAllAdminJobs } from "@/Redux/jobSlices";
 import axios from "axios"
 import { useEffect } from "react"
 import { useDispatch,} from "react-redux"
+import { toast } from "sonner";
 
 
 const useGetAllAdminJobs = () => {
@@ -19,8 +20,9 @@ const useGetAllAdminJobs = () => {
                 }
                //console.log("Adminjob",res)
 
-            }catch(err){
-                console.error(err)
+            }catch(error){
+                toast.error(error.response.data.message);
+                console.error(error)
 
             }
         }

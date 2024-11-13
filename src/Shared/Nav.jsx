@@ -77,7 +77,7 @@ toast.success(res.data.message);
                     variant="outline"
                     className="bg-orange-600 text-white login-text"
                   >
-                    Singup
+                    Register
                   </Button>
                 </Link>
               </div>

@@ -31,9 +31,9 @@ if(res){
   setIsApplied(true);
   toast.success("Job Applied Successfully")
 }
-  }catch(err){
-    console.log(err)
-    toast.error("You Have Already Applied")
+  }catch(error){
+    console.log(error)
+    toast.error(error.response.data.message);
   }
 
 }
@@ -50,8 +50,9 @@ if(res){
             }
             //console.log("job",res)
 
-        }catch(err){
-            console.error(err)
+        }catch(error){
+            console.error(error)
+            toast.error(error.response.data.message);
 
         }
     }

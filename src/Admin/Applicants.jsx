@@ -5,6 +5,7 @@ import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { setAllApplicants } from "@/Redux/applicationSlice"
+import { toast } from "sonner"
 
 
 const Applicants = () => {
@@ -21,8 +22,9 @@ if(res?.data.sucess){
     dispatch(setAllApplicants(res?.data.job))
 
 }
-            }catch(err){
-                console.log(err)
+            }catch(error){
+              toast.error(error.response.data.message);
+                console.log(error)
             }
         }
 fetchAllApplicants();

@@ -66,9 +66,9 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
         toast.success("Profile Update Successfully");
       }
       //console.log("update profile", res);
-    } catch (err) {
-      console.log(err);
-      toast.error("something Wrong");
+    } catch (error) {
+      console.log(error);
+      toast.error(error.response.data.message);
     } finally {
       dispatch(setLoading(false));
     }
