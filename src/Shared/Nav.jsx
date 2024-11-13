@@ -21,7 +21,7 @@ const navigate=useNavigate();
 
 const LogOutHnadler=async()=>{
   try{
-const res= await axios.get(`http://localhost:8080/api/v1/user/logout`,{withCredentials:true})
+const res= await axios.get(`https://careernestbackend.onrender.comapi/v1/user/logout`,{withCredentials:true})
 if(res.data.sucess){
 dispatch(setUser(null));
 navigate('/')
