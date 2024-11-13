@@ -25,7 +25,7 @@ const [isApplied,setIsApplied]=useState(isInitallyApplied);
 
 const applyJobHandler=async()=>{
   try{
-const res= await axios.get(`http://careernestbackend.onrender.com/v1/application/getapplyjob/${jobId}`,{withCredentials:true})
+const res= await axios.get(`https://careernestbackend.onrender.com/v1/application/getapplyjob/${jobId}`,{withCredentials:true})
 //console.log("Apply job",res.data)
 if(res){
   setIsApplied(true);
@@ -41,7 +41,7 @@ if(res){
   useEffect(()=>{
     const fetchSingleJobs=async()=>{
         try{
-            const res= await axios.get(`http://careernestbackend.onrender.com/a1/v1/job/getuserjob/${jobId}`,{
+            const res= await axios.get(`https://careernestbackend.onrender.com/a1/v1/job/getuserjob/${jobId}`,{
                 withCredentials:true,
             })
             if(res.data.success){

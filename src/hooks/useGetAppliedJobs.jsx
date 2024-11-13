@@ -13,7 +13,7 @@ useEffect(()=>{
     // fetch data from API
     const fetachApplidJobs=async()=>{
         try{
-            const res= await axios.get(`http://careernestbackend.onrender.com/a1/v1/application/getapplyjob`,{
+            const res= await axios.get(`https://careernestbackend.onrender.com/a1/v1/application/getapplyjob`,{
                 withCredentials:true,
             })
             if(res.data.sucess){

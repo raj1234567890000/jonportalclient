@@ -12,7 +12,7 @@ const ApplicantsTable = () => {
     const statusHandler = async (status, id) => {
         try {
             axios.defaults.withCredentials = true;
-            const res = await axios.post(`http://careernestbackend.onrender.com/a1/v1/application/status/${id}/update`, { status });
+            const res = await axios.post(`https://careernestbackend.onrender.com/a1/v1/application/status/${id}/update`, { status });
            // console.log(res);
             if (res.data.success) {
                 toast.success(res.data.message);
