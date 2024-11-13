@@ -28,16 +28,21 @@ const Login = () => {
   const dispatch = useDispatch();
   const { loading,user } = useSelector((store) => store.auth);
 
-  const submitHandler = async (e,token) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     //console.log(input);
     e.preventDefault();
     try {
       dispatch(setLoading(true));
-      const res = await axios.post(`https://careernestbackend.onrender.com/api/v1/user/login`, input,{withCredentials:true});
+      const res = await axios.post(`http://careernestbackend.onrender.com/api/v1/user/login`, input,{
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          Accept: "application/json"
+        },
+        withCredentials:true});
       if (res.data.sucess) {
-        localStorage.setItem('token', token)
-        localStorage.getItem('token')
+       
       dispatch(setUser(res.data.user))
         navigate("/");
         toast.success(res.data.message);

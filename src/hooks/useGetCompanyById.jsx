@@ -10,7 +10,7 @@ const useGetCompanyById = (companyId) => {
     useEffect(()=>{
         const fetchSingleCompany=async()=>{
             try{
-                const res= await axios.get(`https://careernestbackend.onrender.com/api/v1/company/getcompanybyid/${companyId}`,{
+                const res= await axios.get(`http://careernestbackend.onrender.com/api/v1/company/getcompanybyid/${companyId}`,{
                     withCredentials:true,
                 })
                 if(res?.data?.success){
