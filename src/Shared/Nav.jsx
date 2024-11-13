@@ -19,10 +19,11 @@ const{user}=useSelector(store=>store.auth)
 const dispatch=useDispatch();
 const navigate=useNavigate();
 
-const LogOutHnadler=async()=>{
+const LogOutHnadler=async(token)=>{
   try{
 const res= await axios.get(`https://careernestbackend.onrender.com/api/v1/user/logout`,{withCredentials:true})
 if(res.data.sucess){
+  localStorage.getItem("token",token)
 dispatch(setUser(null));
 navigate('/')
 toast.success(res.data.message);
