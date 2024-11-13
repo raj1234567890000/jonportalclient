@@ -23,7 +23,7 @@ const LogOutHnadler=async(token)=>{
   try{
 const res= await axios.get(`https://careernestbackend.onrender.com/api/v1/user/logout`,{withCredentials:true})
 if(res.data.sucess){
-  localStorage.getItem("token",token)
+  localStorage.removeItem("token",token)
 dispatch(setUser(null));
 navigate('/')
 toast.success(res.data.message);
