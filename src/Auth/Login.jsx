@@ -34,13 +34,7 @@ const Login = () => {
     e.preventDefault();
     try {
       dispatch(setLoading(true));
-      const res = await axios.post(`http://careernestbackend.onrender.com/api/v1/user/login`, input,{
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          Accept: "application/json"
-        },
-        withCredentials:true});
+      const res = await axios.post(`http://careernestbackend.onrender.com/api/v1/user/login`, input,{withCredentials:true});
       if (res.data.sucess) {
        
       dispatch(setUser(res.data.user))
