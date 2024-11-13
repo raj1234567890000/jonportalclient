@@ -36,6 +36,9 @@ const Login = () => {
       dispatch(setLoading(true));
       const res = await axios.post(`https://careernestbackend.onrender.com/api/v1/user/login`, input,{withCredentials:true});
       if (res.data.sucess) {
+        const { token } = res.data.success;
+        localStorage.setItem('token', token);
+        localStorage.getItem('token');
       dispatch(setUser(res.data.user))
         navigate("/");
         toast.success(res.data.message);
