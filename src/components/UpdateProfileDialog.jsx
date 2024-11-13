@@ -51,7 +51,7 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
     try {
       dispatch(setLoading(true));
       const res = await axios.post(
-        `https://jobportal-29rz.onrender.com/api/v1/user/profile/update`,
+        `https://careernestbackend.onrender.com/api/v1/user/profile/update`,
         formData,
         {
           headers: {

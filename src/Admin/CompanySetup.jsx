@@ -47,7 +47,7 @@ const CompanySetup = () => {
         }
         try{
             setLoading(true)
-const res=await axios.put(`https://jobportalbackend-2pcb.onrender.com/api/v1/company/upadtecompanybyid/${params.id}`,formData,{
+const res=await axios.put(`https://careernestbackend.onrender.com/api/v1/company/upadtecompanybyid/${params.id}`,formData,{
     headers:{
         "Content-Type":"multipart/form-data"
     },

@@ -9,7 +9,7 @@ const useGetCompanyById = (companyId) => {
     useEffect(()=>{
         const fetchSingleCompany=async()=>{
             try{
-                const res= await axios.get(`https://jobportalbackend-2pcb.onrender.com/api/v1/company/getcompanybyid/${companyId}`,{
+                const res= await axios.get(`https://careernestbackend.onrender.com/api/v1/company/getcompanybyid/${companyId}`,{
                     withCredentials:true,
                 })
                 if(res?.data?.success){
