@@ -23,8 +23,6 @@ const LogOutHnadler=async()=>{
   try{
 const res= await axios.get(`http://localhost:8080/api/v1/user/logout`,{withCredentials:true})
 if(res.data.sucess){
-  const { token } = res.data.success;
-  localStorage.removeItem('token', token)
 dispatch(setUser(null));
 navigate('/')
 toast.success(res.data.message);
