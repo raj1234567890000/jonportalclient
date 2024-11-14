@@ -41,6 +41,7 @@ const Login = () => {
         withCredentials: true
       });
       if (res.data.sucess) {
+        const token = res.data.token;
         localStorage.setItem('authToken', token);
       dispatch(setUser(res.data.user))
         navigate("/");
