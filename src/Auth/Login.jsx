@@ -37,7 +37,6 @@ const Login = () => {
       const res = await axios.post(`https://careernestbackend.onrender.com/api/v1/user/login`, input,{
         headers: {
          "Content-Type": "application/json",
-         
         },
         withCredentials: true
       });
@@ -45,7 +44,7 @@ const Login = () => {
         const token = res.data.token;
         if (token) {
           localStorage.setItem('authToken', token); // Store the token in localStorage
-          //console.log('Token saved to localStorage:', token);
+          //console.log('Token:', token);
         }
       dispatch(setUser(res.data.user))
         navigate("/");
