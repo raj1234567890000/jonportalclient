@@ -15,9 +15,9 @@ useEffect(()=>{
         try{ const token=localStorage.getItem('authToken')
             const res= await axios.get(`https://careernestbackend.onrender.com/a1/v1/application/getapplyjob`,{
 
-              headers:{
-                token: token
-            },
+               headers:{
+                        token: token
+                    },
                 withCredentials:true,
             })
             if(res.data.sucess){

@@ -33,7 +33,7 @@ const res= await axios.get(`https://careernestbackend.onrender.com/a1/v1/applica
 },
   withCredentials:true
 })
-//console.log("Apply job",res.data)
+console.log("Apply job",res.data)
 if(res){
   setIsApplied(true);
   toast.success("Job Applied Successfully")
