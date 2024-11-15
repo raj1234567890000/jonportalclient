@@ -11,7 +11,12 @@ const useGetAllJobs = () => {
     useEffect(()=>{
         const fetchAllJobs=async()=>{
             try{
+               
+                const token=localStorage.getItem('authToken')
                 const res= await axios.get(`https://careernestbackend.onrender.com/a1/v1/job/getallpostjob?keyword=${searchedQuery}`,{
+                    headers:{
+                        token: token
+                    },
                     withCredentials:true,
                 })
                 if(res.data.success){
