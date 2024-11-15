@@ -9,8 +9,12 @@ const useGetCompanyById = (companyId) => {
     const dispatch=useDispatch();
     useEffect(()=>{
         const fetchSingleCompany=async()=>{
-            try{
+            try{ const token=localStorage.getItem('authToken')
                 const res= await axios.get(`https://careernestbackend.onrender.com/api/v1/company/getcompanybyid/${companyId}`,{
+
+                    headers:{
+                        token: token
+                    },
                     withCredentials:true,
                 })
                 if(res?.data?.success){

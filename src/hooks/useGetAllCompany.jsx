@@ -9,8 +9,11 @@ const useGetAllCompany= () => {
     const dispatch=useDispatch();
     useEffect(()=>{
         const fetchAllCompany=async()=>{
-            try{
+            try{ const token=localStorage.getItem('authToken')
                 const res= await axios.get(`https://careernestbackend.onrender.com/api/v1/company/getcomapny`,{
+                    headers:{
+                        token: token
+                    },
                     withCredentials:true,
                 })
                 if(res?.data?.success){

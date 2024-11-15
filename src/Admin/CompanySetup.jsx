@@ -46,10 +46,13 @@ const CompanySetup = () => {
             formData.append("file",input.file)
         }
         try{
+          const token=localStorage.getItem('authToken')
             setLoading(true)
 const res=await axios.put(`https://careernestbackend.onrender.com/api/v1/company/upadtecompanybyid/${params.id}`,formData,{
     headers:{
-        "Content-Type":"multipart/form-data"
+        "Content-Type":"multipart/form-data",
+        token:token
+
     },
     withCredentials:true
 })

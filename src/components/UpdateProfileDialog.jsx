@@ -49,6 +49,7 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
       formData.append("file", input.file);
     }
     try {
+      const token=localStorage.getItem('authToken')
       dispatch(setLoading(true));
       const res = await axios.post(
         `https://careernestbackend.onrender.com/api/v1/user/profile/update`,
@@ -56,6 +57,7 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            token:token
           },
           withCredentials: true,
         }

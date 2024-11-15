@@ -17,9 +17,11 @@ const CreateCompanies = () => {
   const dispatch = useDispatch();
   const registerNewComapny = async() => {
     try {
+      const token=localStorage.getItem('authToken')
         const res = await axios.post(`https://careernestbackend.onrender.com/api/v1/company/registercompany`, {companyName}, {
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                token:token
             },
             withCredentials:true
         });

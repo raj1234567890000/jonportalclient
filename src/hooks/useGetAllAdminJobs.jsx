@@ -12,7 +12,12 @@ const useGetAllAdminJobs = () => {
     useEffect(()=>{
         const fetchAllAdminJobs=async()=>{
             try{
+                const token=localStorage.getItem('authToken')
                 const res= await axios.get(`https://careernestbackend.onrender.com/a1/v1/job/getadminjob`,{
+
+                    headers:{
+                        token: token
+                    },
                     withCredentials:true,
                 })
                 if(res.data.success){

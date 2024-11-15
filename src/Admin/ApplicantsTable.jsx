@@ -10,9 +10,13 @@ const ApplicantsTable = () => {
     const{applicants}=useSelector(store=>store.application)
 
     const statusHandler = async (status, id) => {
-        try {
+        try { const token=localStorage.getItem('authToken')
             axios.defaults.withCredentials = true;
-            const res = await axios.post(`https://careernestbackend.onrender.com/a1/v1/application/status/${id}/update`, { status });
+            const res = await axios.post(`https://careernestbackend.onrender.com/a1/v1/application/status/${id}/update`,{ status},{
+                headers:{
+                    token: token
+                },
+            });
            // console.log(res);
             if (res.data.success) {
                 toast.success(res.data.message);

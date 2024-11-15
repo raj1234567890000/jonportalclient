@@ -50,6 +50,7 @@ const PostAdminJob = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
+      const token=localStorage.getItem('authToken')
       setLoading(true);
       const res = await axios.post(
         `https://careernestbackend.onrender.com/a1/v1/job/postjob`,
@@ -57,6 +58,7 @@ const PostAdminJob = () => {
         {
           headers: {
             "Content-Type": "application/json",
+            token:token
           },
           withCredentials: true,
         }
