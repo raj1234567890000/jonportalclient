@@ -26,7 +26,7 @@ const [isApplied,setIsApplied]=useState(isInitallyApplied);
 const applyJobHandler=async()=>{
   try{
     const token=localStorage.getItem('authToken')
-const res= await axios.get(`https://careernestbackend.onrender.com/a1/v1/application/getapplyjob/${jobId}`,{
+const res= await axios.get(`https://careernestbackend.onrender.com/a1/v1/application/apply/${jobId}`,{
   
   headers:{
     token: token
