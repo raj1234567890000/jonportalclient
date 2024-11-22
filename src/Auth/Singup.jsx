@@ -28,6 +28,7 @@ const Singup = () => {
   const { loading,user } = useSelector((store) => store.auth);
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
+    calculateProgress ();
   };
   const changeFileHandler = (e) => {
     setInput({ ...input, file: e.target.files?.[0] });
