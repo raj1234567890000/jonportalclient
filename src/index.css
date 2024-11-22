@@ -5,7 +5,26 @@
 body{
     font-family: Georgia, serif;
 }
-
+.nav-header{
+  width: 100%;
+  overflow: hidden;
+}
+.svg-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+.foot{
+  background-color: #00cba9;
+  color: white;
+}
+.foot{
+  background-color: #00cba9;
+  color: white;
+}
 @media only screen and (max-width: 600px) {
     body {
        

@@ -1,13 +1,16 @@
 const Footer = () => {
   return (
     <div className="Footer w-full">
-      <footer className="bg-gray-900 text-gray-300 py-8">
+        <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160"><path fill="#00cba9" d="M0,32L80,58.7C160,85,320,139,480,138.7C640,139,800,85,960,80C1120,75,1280,117,1360,138.7L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+      </div>
+      <footer className="bg-gray-900 text-white-300 py-8 foot">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {/* Company Info */}
             <div>
               <h3 className="text-lg font-bold text-white mb-4">Company</h3>
-              <p className="text-gray-400">
+              <p className="text-white-400">
                 We provide the best solutions for your business needs. Join us in building the future.
               </p>
             </div>
@@ -45,7 +48,7 @@ const Footer = () => {
             {/* Newsletter Signup */}
             <div>
               <h3 className="text-lg font-bold text-white mb-4">Newsletter</h3>
-              <p className="text-gray-400 mb-4">Subscribe to get the latest updates.</p>
+              <p className="text-white-400 mb-4">Subscribe to get the latest updates.</p>
               <form>
                 <input
                   type="email"
@@ -64,7 +67,7 @@ const Footer = () => {
 
           {/* Footer Bottom */}
           <div className="border-t border-gray-700 mt-8 pt-6">
-            <div className="flex flex-col items-center lg:flex-row lg:justify-between text-gray-400 text-center lg:text-left">
+            <div className="flex flex-col items-center lg:flex-row lg:justify-between text-white-400 text-center lg:text-left">
               <p>&copy; 2024 Company Name. All rights reserved.</p>
               <div className="mt-4 lg:mt-0">
                 <a href="#" className="hover:text-white mx-2">Privacy Policy</a>

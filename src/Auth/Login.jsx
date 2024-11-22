@@ -70,12 +70,12 @@ const Login = () => {
       <div>
         <Nav />
         <div className="login">
-        <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto ">
+        <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-9">
           <form
             onSubmit={submitHandler}
             className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 border border-gray-200 rounded-md p-6 sm:p-8 lg:p-10 my-10 shadow-md"
           >
-            <h1 className="font-bold text-xl mb-5">Login</h1>
+            <h1 className="font-bold text-xl mb-5 text-white">Login</h1>
 
             <div className="my-2">
               <Label className="ml-2">Email</Label>

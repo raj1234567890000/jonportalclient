@@ -24,12 +24,14 @@ const Singup = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [progress, setProgress] = useState(0);
   const { loading,user } = useSelector((store) => store.auth);
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
   const changeFileHandler = (e) => {
     setInput({ ...input, file: e.target.files?.[0] });
+    calculateProgress ();
   };
 
   const submitHandler = async (e) => {
@@ -65,6 +67,18 @@ const Singup = () => {
       dispatch(setLoading(false));
     }
   };
+  const calculateProgress = () => {
+    let progress = 0;
+    const fields = Object.values(input);
+
+    fields.forEach((field) => {
+      if (field || field === true) {
+        progress += 20;
+      }
+    });
+
+    setProgress(progress);
+  };
 
   useEffect(()=>{
     if(user){
@@ -77,12 +91,15 @@ const Singup = () => {
       <div>
         <Nav />
         <div className="singup">
-        <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto">
+        <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-3">
           <form
             onSubmit={submitHandler}
             className=" border border-gray-200 rounded-md p-4 my-10  sm:w-1/3 singup-form"
           >
-            <h1 className="font-bold text-xl mb-5">Sing up</h1>
+            <h1 className="font-bold text-xl mb-5 text-white">Sing up</h1>
+            <div className="progress-container">
+          <progress id="progress-bar" className="w-full" value={progress} max="100"></progress>
+        </div>
             <div className="my-2">
               <Label className="ml-2">Full Name</Label>
               <Input
@@ -170,7 +187,7 @@ const Singup = () => {
                 Please Wait
               </Button>
             ) : (
-              <Button className="bg-black text-white w-full my-4">
+              <Button className="bg-black text-white w-full my-4 " disabled={progress !== 100}>
                 Singup
               </Button>
             )}

@@ -25,7 +25,7 @@ const LatestjobCard = ({job}) => {
         <div>
           <h1 className="font-bold text-lg my-2">{job?.title}</h1>
           <p className="tetx-sm text-gray-600">
-            {job?.description}
+            {job?.description.slice(0,100)}...
           </p>
         </div>
         <div className="flex items-center gap-2 mt-4 ml-16">
