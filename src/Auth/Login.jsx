@@ -22,11 +22,13 @@ const Login = () => {
   });
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
+    calculateProgress();
   };
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loading,user } = useSelector((store) => store.auth);
+  const [progress, setProgress] = useState(0);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -59,6 +61,18 @@ const Login = () => {
       dispatch(setLoading(false));
     }
   };
+  const calculateProgress = () => {
+    let progress = 0;
+    const fields = Object.values(input);
+
+    fields.forEach((field) => {
+      if (field || field === true) {
+        progress += 50;
+      }
+    });
+
+    setProgress(progress);
+  };
   useEffect(()=>{
     if(user){
       navigate("/")
@@ -76,7 +90,9 @@ const Login = () => {
             className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 border border-gray-200 rounded-md p-6 sm:p-8 lg:p-10 my-10 shadow-md"
           >
             <h1 className="font-bold text-xl mb-5 text-white">Login</h1>
-
+            <div className="progress-container">
+          <progress id="progress-bar" className="w-full" value={progress} max="100"></progress>
+        </div>
             <div className="my-2">
               <Label className="ml-2">Email</Label>
               <Input
@@ -132,7 +148,7 @@ const Login = () => {
                 Please Wait
               </Button>
             ) : (
-              <Button className="bg-black text-white w-full my-4">Login</Button>
+              <Button className="bg-black text-white w-full my-4" disabled={progress !== 100}>Login</Button>
             )}
 
             <span className="text-sm">
