@@ -95,7 +95,7 @@ const Singup = () => {
         <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-3">
           <form
             onSubmit={submitHandler}
-            className=" border border-gray-200 rounded-md p-4 my-10  sm:w-1/3 singup-form"
+            className=" border border-white bg-[#00cba9] text-white rounded-md p-4 my-10  sm:w-1/3 singup-form"
           >
             <h1 className="font-bold text-xl mb-5 text-white">Sing up</h1>
             <div className="progress-container">
@@ -139,7 +139,7 @@ const Singup = () => {
               <Input
                 type="password"
                 placeholder=" Enter your password"
-                className="mt-1"
+                className="mt-1 text-black"
                 name="password"
                 value={input.password}
                 onChange={changeEventHandler}

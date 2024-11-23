@@ -87,7 +87,7 @@ const Login = () => {
         <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-9">
           <form
             onSubmit={submitHandler}
-            className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 border border-gray-200 rounded-md p-6 sm:p-8 lg:p-10 my-10 shadow-md"
+            className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 border border-white bg-[#00cba9] text-white rounded-md p-6 sm:p-8 lg:p-10 my-10 shadow-md"
           >
             <h1 className="font-bold text-xl mb-5 text-white">Login</h1>
             <div className="progress-container">
@@ -110,7 +110,7 @@ const Login = () => {
               <Input
                 type="password"
                 placeholder=" Enter your password"
-                className="mt-1"
+                className="mt-1 text-black"
                 name="password"
                 value={input.password}
                 onChange={changeEventHandler}
