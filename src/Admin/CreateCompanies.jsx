@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { setSingleCompany } from "@/Redux/companySlice";
@@ -44,11 +45,12 @@ const CreateCompanies = () => {
         <div className="max-w-4xl mx-auto">
           <div className="my-10">
             <h1 className="font-bold text-2xl">Your Company Name</h1>
-            <p className="text-gray-500">
+            <p className="text-white">
               What Would You Like To Give Your Company Name? You Can Change This
               Later
             </p>
           </div>
+          <div className="mt-40">
           <Label>Company Name</Label>
           <Input
             type="text"
@@ -73,6 +75,8 @@ const CreateCompanies = () => {
           </div>
         </div>
       </div>
+      </div>
+      <Footer/>
     </>
   );
 };

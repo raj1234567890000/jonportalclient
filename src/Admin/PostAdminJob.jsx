@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/Footer";
 
 const PostAdminJob = () => {
   const [input, setInput] = useState({
@@ -76,12 +77,13 @@ const PostAdminJob = () => {
   };
 
   return (
+    <>
     <div>
       <Nav />
       <div className="flex items-center justify-center w-screen my-5">
         <form
           onSubmit={submitHandler}
-          className="p-8 max-w-4xl border border-gray-200 shadow-lg rounded-md"
+          className="p-8 max-w-4xl border border-gray-200 shadow-lg rounded-md mt-44"
         >
           <div className="grid grid-cols-2 gap-2">
             <div>
@@ -211,6 +213,8 @@ const PostAdminJob = () => {
         </form>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

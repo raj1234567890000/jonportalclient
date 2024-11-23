@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import useGetCompanyById from "@/hooks/useGetCompanyById"
@@ -83,7 +84,7 @@ if(res?.data?.success){
   return (
     <>
       <Nav/>
-      <div className="max-w-xl mx-auto my-10">
+      <div className="max-w-xl mx-auto my-40">
         <form onSubmit={submitHandler}>
             <div className="flex items-center gap-5 p-8">
             <Button className="flex items-center gap-2 text-white font-semibold bg-black" varient="outline" onClick={()=>navigate('/admin/companies')}>
@@ -127,6 +128,7 @@ if(res?.data?.success){
         </form>
 
       </div>
+      <Footer/>
     </>
   )
 }

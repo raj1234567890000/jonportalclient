@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux"
 import AdminJobsTable from "./AdminJobsTable"
 import useGetAllAdminJobs from "@/hooks/useGetAllAdminJobs"
 import { setSearchJobByText } from "@/Redux/jobSlices"
+import Footer from "@/components/Footer"
 
 
 
@@ -25,7 +26,7 @@ dispatch(setSearchJobByText(input))
 <div>
         <Nav/>
     
-    <div className="max-w-6xl mx-auto my-10 mt-32 ">
+    <div className="max-w-6xl mx-auto my-10 mt-40 ">
         <div className="flex items-center justify-between my-5">
         <Input 
         className="w-fit"
@@ -38,6 +39,7 @@ dispatch(setSearchJobByText(input))
         
     </div>
     </div>
+    <Footer/>
     </>
   )
 }

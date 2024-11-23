@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { setsearchCompanyByText } from "@/Redux/companySlice"
 import useGetAllCompany from "@/hooks/useGetAllCompany"
+import Footer from "@/components/Footer"
 
 
 const Companies = () => {
@@ -22,7 +23,7 @@ dispatch(setsearchCompanyByText(input))
 <div>
         <Nav/>
     
-    <div className="max-w-6xl mx-auto my-10 mt-32 ">
+    <div className="max-w-6xl mx-auto my-10 mt-40 ">
         <div className="flex items-center justify-between my-5">
         <Input 
         className="w-fit"
@@ -35,6 +36,7 @@ dispatch(setsearchCompanyByText(input))
         
     </div>
     </div>
+    <Footer/>
     </>
   )
 }
