@@ -42,7 +42,7 @@ import { toast } from "sonner";
     const handleDelete=async(id)=>{
     
       try{
-       const {data}=await axios.delete(`http://localhost:8080/a1/v1/job/jobdelete/${id}`);
+       const {data}=await axios.delete(`https://careernestbackend.onrender.com/a1/v1/job/jobdelete/${id}`);
        if(data.success){
         alert("Are you sure")
         toast.success(`Job is deleted successyully`)
