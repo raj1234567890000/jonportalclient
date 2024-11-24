@@ -39,7 +39,7 @@ fetchAllApplicants();
   return (
     <div>
      <Nav/>
-     <div className="max-w-7xl mx-auto">
+     <div className="max-w-7xl mx-auto mt-24">
         <h1 className="font-bold text-xl my-5">Applicants ({applicants?.applications?.length})</h1>
         <ApplicantsTable/>
 

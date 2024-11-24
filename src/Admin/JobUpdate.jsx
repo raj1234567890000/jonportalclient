@@ -2,9 +2,9 @@
 
 const JobUpdate = () => {
   return (
-    <div>
-      job update
-    </div>
+    <div className="mt-32 text-center text-red-700 font-extrabold">
+    job update coming soon
+  </div>
   )
 }
 
