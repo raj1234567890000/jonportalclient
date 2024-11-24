@@ -24,8 +24,7 @@ const Herosection = () => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['<i> Our job portal application is a powerful platform designed to connect job seekers with their ideal employers, streamlining the hiring process and making it accessible, efficient, and engaging. The app caters to a wide range of users—from fresh graduates to seasoned professionals and employers of all sizes.<i/>'],
-      typeSpeed: 50,
+      strings: ['<i><i/>'],
       loop:true
     });
 
@@ -51,9 +50,10 @@ const Herosection = () => {
             Search, Apply & <br className="hidden md:block" /> Get your{" "}
             <span className="text-[#6A38C2]">Dreams jobs</span>
           </h1>
-          <p className="text-sm md:text-base lg:text-lg px-2 md:px-10 lg:px-20 text-[#6A38C2] h-52 typed-js">
-          <span ref={el} />
-          </p>
+          <p className="text-sm md:text-base lg:text-lg px-2 md:px-10 lg:px-20 text-[#6A38C2] h-32 typed-js">
+         
+          Our job portal application is a powerful platform designed to connect job seekers with their ideal employers, streamlining the hiring process and making it accessible, efficient, and engaging. The app caters to a wide range of users—from fresh graduates to seasoned professionals and employers of all sizes
+          <span ref={el} /></p>
           
           <div className="flex w-full sm:w-[80%] md:w-[60%] lg:w-[40%] shadow-lg border border-gray-200 pl-3 rounded-full items-center gap-4 mx-auto">
             <input
