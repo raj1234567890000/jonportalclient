@@ -9,10 +9,12 @@ import {
 } from "@/components/ui/table";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "@radix-ui/react-popover";
-import { Edit, MoreHorizontal } from "lucide-react";
+import axios from "axios";
+import { Delete, Edit, MoreHorizontal } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const CompaniesTable = () => {
     const{companies,searchCompanyByText}=useSelector(store=>store.company);
@@ -28,6 +30,25 @@ const CompaniesTable = () => {
         });
         setFilterCompany(filteredCompany);
     },[companies,searchCompanyByText])
+
+     //delte company 
+
+     const handleDelete=async(id)=>{
+    
+      try{
+       const {data}=await axios.delete(`https://careernestbackend.onrender.com/api/v1/company/companydelete/${id}`);
+       if(data.success){
+        alert("Are you sure")
+        toast.success(`company is deleted successyully`)
+       }else{
+        toast.error(data.message);
+       }
+      
+      }catch(error){
+      console.log(error)
+      toast.error("Something Went Wrong In delte Company");
+      }
+        }
 
   return (
     <div>
@@ -74,6 +95,11 @@ const CompaniesTable = () => {
                <div onClick={()=>navigate(`/admin/companies/${company._id}`)}  className="flex bg-black text-white w-20 h-8 border rounded-md ml-6">
                    <Edit className="mt-1 ml-2"/>
                    <span className="ml-4 mt-1">Edit</span>
+               </div>
+               <div onClick={()=>handleDelete(company._id)}  className="flex bg-black text-white w-24 h-8 border rounded-md ml-6 mt-2">
+                   <Delete className="mt-1 ml-2" />
+                   <span className="ml-2 mt-1">Delete</span>
+                  
                </div>
 
            </PopoverContent>

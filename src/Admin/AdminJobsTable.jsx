@@ -11,10 +11,12 @@ import {
   
 
   import { Popover, PopoverContent, PopoverTrigger } from "@radix-ui/react-popover";
-  import { Edit, Eye, MoreHorizontal } from "lucide-react";
+import axios from "axios";
+  import { Delete, Edit, Eye, MoreHorizontal } from "lucide-react";
   import { useEffect, useState } from "react";
   import { useSelector } from "react-redux";
   import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
   
   const AdminJobsTable = () => {
  
@@ -33,6 +35,26 @@ import {
         });
         setFilterJobs(filteredJobs);
     },[allAdminJobs,searchJobByText])
+
+        
+    //delte job
+
+    const handleDelete=async(id)=>{
+    
+      try{
+       const {data}=await axios.delete(`http://localhost:8080/a1/v1/job/jobdelete/${id}`);
+       if(data.success){
+        alert("Are you sure")
+        toast.success(`Job is deleted successyully`)
+       }else{
+        toast.error(data.message);
+       }
+      
+      }catch(error){
+      console.log(error)
+      toast.error("Something Went Wrong In delte Job");
+      }
+        }
   
     return (
       <div>
@@ -75,6 +97,11 @@ import {
                     <Eye className="ml-2"/>
                     <span >Applicants</span>
                  </div>
+                 <div onClick={()=>handleDelete(job._id)}  className="flex bg-black text-white w-24 h-8 border rounded-md ml-6 mt-2">
+                   <Delete className="mt-1 ml-2" />
+                   <span className="ml-2 mt-1">Delete</span>
+                  
+               </div>
   
              </PopoverContent>
          </Popover>
