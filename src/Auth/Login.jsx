@@ -98,7 +98,7 @@ const Login = () => {
               <Input
                 type="email"
                 placeholder=" Enter your Email"
-                className="mt-1"
+                className="mt-1 text-black"
                 name="email"
                 value={input.email}
                 onChange={changeEventHandler}

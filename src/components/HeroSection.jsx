@@ -43,7 +43,7 @@ const Herosection = () => {
     <div className="ml-0 sm:ml-10 md:ml-20 lg:ml-40 p-4 sm:p-6 md:p-8 mr-28 mt-5">
       <div className="text-center">
         <div className="flex flex-col gap-5 my-10">
-          <span className="mx-auto px-4 py-2 rounded-full bg-gray-100 text-[#F83002] font-medium text-sm md:text-base">
+          <span className="mx-auto px-4 py-2 rounded-full bg-black text-white font-medium text-sm md:text-base">
             No.1 Job Hunt Website
           </span>
           <h1 className="text-lg md:text-2xl font-bold mt-10">

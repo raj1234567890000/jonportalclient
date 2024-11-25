@@ -25,7 +25,7 @@ body{
   background-color: #00cba9;
   color: white;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) {
     body {
        
         font-size: 20px;

@@ -22,7 +22,7 @@ const Profile = () => {
     <div>
       <Nav />
       <div className="profile">
-      <div className="max-w-3xl mx-auto bg-white border border-gray-500 rounded-2xl my-5 p-8">
+      <div className="max-w-4xl mx-auto bg-[#00cba9] text-white rounded-2xl my-5 p-8">
         <div className="flex justify-between">
           <div className="flex items-center gap-4 ">
             <Avatar className="h-24 w-24 ">
@@ -58,7 +58,7 @@ const Profile = () => {
               user?.profile?.skills.map((item, index) => (
                 <Badge
                   key={index}
-                  className={"text-[#F83002] font-bold ml-2 mt-2"}
+                  className={"text-white font-bold ml-2 mt-2"}
                   variant="ghost"
                 >
                   {item}
@@ -76,7 +76,7 @@ const Profile = () => {
             <a
               target="_blank"
               href={user?.profile?.resume}
-              className="text-blue-500 w-full hover:underline cursor-pointer"
+              className="text-white w-full hover:underline cursor-pointer"
             >
               {user?.profile?.resumeOriginalName}
             </a>

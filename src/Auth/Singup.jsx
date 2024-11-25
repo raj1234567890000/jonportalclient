@@ -106,7 +106,7 @@ const Singup = () => {
               <Input
                 type="text"
                 placeholder=" Enter your full name"
-                className="mt-1"
+                className="mt-1 text-black"
                 name="fullname"
                 value={input.fullname}
                 onChange={changeEventHandler}
@@ -117,7 +117,7 @@ const Singup = () => {
               <Input
                 type="email"
                 placeholder=" Enter your Email"
-                className="mt-1"
+                className="mt-1 text-black"
                 name="email"
                 value={input.email}
                 onChange={changeEventHandler}
@@ -128,7 +128,7 @@ const Singup = () => {
               <Input
                 type="text"
                 placeholder=" +918907857453"
-                className="mt-1"
+                className="mt-1 text-black"
                 name="phoneNumber"
                 value={input.phoneNumber}
                 onChange={changeEventHandler}
