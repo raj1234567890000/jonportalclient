@@ -25,7 +25,7 @@ const res= await axios.get(`https://careernestbackend.onrender.com/api/v1/user/l
 if(res.data.sucess){
   localStorage.removeItem("authToken",token)
 dispatch(setUser(null));
-navigate('/')
+navigate('/login')
 toast.success(res.data.message);
 }
   }catch(err){
@@ -59,13 +59,24 @@ toast.success(res.data.message);
     </>
   ):(
     <>
-       <Link to='/'>Home</Link>
-            <Link to='/job'>Jobs</Link>
-            <Link to='/browser'>Browser</Link>
+      
     </>
   )
 }
 
+{
+  user && user.role === 'student'?(
+    <>
+    <Link to='/'>Home</Link>
+            <Link to='/job'>Jobs</Link>
+            <Link to='/browser'>Browser</Link>
+    </>
+  ):(
+    <>
+       
+    </>
+  )
+}
          
             </ul>
             {!user ? (
