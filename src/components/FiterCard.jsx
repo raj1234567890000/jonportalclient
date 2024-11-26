@@ -32,7 +32,7 @@ const FilterCard = () => {
         //eslint-disable-next-line
     },[selectedValue]);
     return (
-        <div className='w-full  p-3 rounded-md hidden sm:block bg-black text-white  border  mt-11 '>
+        <div className='w-full  p-3 rounded-md hidden sm:block bg-[#006666] text-white  border  mt-11 '>
             <h1 className='font-bold text-lg'>Filter Jobs</h1>
             <hr className='mt-3' />
             <RadioGroup value={selectedValue} onValueChange={changeHandler}>
