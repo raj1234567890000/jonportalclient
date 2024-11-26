@@ -22,7 +22,7 @@ const Profile = () => {
     <div>
       <Nav />
       <div className="profile">
-      <div className="max-w-4xl mx-auto bg-[#00cba9] text-white border border-white rounded-2xl my-5 p-8">
+      <div className="max-w-4xl mx-auto bg-[#006666] text-white border border-white rounded-2xl my-5 p-8">
         <div className="flex justify-between">
           <div className="flex items-center gap-4 ">
             <Avatar className="h-24 w-24 ">
