@@ -25,6 +25,11 @@ body{
   background-color: #006666;
   color: white;
 }
+.contact{
+  margin-left: 580px;
+  margin-top: 30px;
+
+}
 @media only screen and (max-width: 400px) {
     body {
        

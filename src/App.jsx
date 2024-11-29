@@ -16,6 +16,12 @@ import PostAdminJob from './Admin/PostAdminJob'
 import Applicants from './Admin/Applicants'
 import JobUpdate from './Admin/JobUpdate'
 import ProtectedRoute from './Admin/ProtectedRoute'
+import Contact from './components/Contact'
+import AboutUs from './components/AboutUs'
+import OurServices from './components/OurServices'
+import Blogs from './components/Blogs'
+import PrivacyPolicy from './components/PrivacyPolicy'
+import Service from './components/Services'
 
 
 
@@ -50,6 +56,30 @@ function App() {
   {
     path:'/description/:id',
     element:<JobDescription/>
+  },
+  {
+    path:'/contact',
+    element:<Contact/>
+  },
+  {
+    path:'/about',
+    element:<AboutUs/>
+  },
+  {
+    path:'/services',
+    element:<OurServices/>
+  },
+  {
+    path:'/blog',
+    element:<Blogs/>
+  },
+  {
+    path:'/privacypolicy',
+    element:<PrivacyPolicy/>
+  },
+  {
+    path:'/service',
+    element:<Service/>
   },
 
   //admin statt here
