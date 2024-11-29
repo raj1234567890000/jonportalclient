@@ -2,8 +2,12 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+
   const handleScrollToTop = () => {
-    window.scrollTo(0, 0); // Scrolls to the top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
   return (
     <div className="Footer w-full">
