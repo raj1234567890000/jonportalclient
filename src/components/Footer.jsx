@@ -2,6 +2,9 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0); // Scrolls to the top of the page
+  };
   return (
     <div className="Footer w-full">
       <div>
@@ -21,10 +24,10 @@ const Footer = () => {
     <div>
               <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
               <ul>
-                <li className="mb-2 hover:text-white"><a href="#"><Link to="/about">About Us</Link></a></li>
-                <li className="mb-2 hover:text-white"><a href="#"><Link to='/services'>Services</Link></a></li>
-                <li className="mb-2 hover:text-white"><a href="#"><Link to='/contact'>Contact</Link></a></li>
-                <li className="mb-2 hover:text-white"><a href="#"><Link to="/blog">Blog</Link></a></li>
+                <li className="mb-2 hover:text-white"><a href="#"><Link to="/about" onClick={handleScrollToTop}>About Us</Link></a></li>
+                <li className="mb-2 hover:text-white"><a href="#"><Link to='/services' onClick={handleScrollToTop}>Services</Link></a></li>
+                <li className="mb-2 hover:text-white"><a href="#"><Link to='/contact' onClick={handleScrollToTop}>Contact</Link></a></li>
+                <li className="mb-2 hover:text-white"><a href="#"><Link to="/blog" onClick={handleScrollToTop}>Blog</Link></a></li>
               </ul>
             </div>
             
@@ -32,10 +35,10 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
               <ul>
-                <li className="mb-2 hover:text-white"><a href="#"><Link to="/about">About Us</Link></a></li>
-                <li className="mb-2 hover:text-white"><a href="#"><Link to='/services'>Services</Link></a></li>
-                <li className="mb-2 hover:text-white"><a href="#"><Link to='/contact'>Contact</Link></a></li>
-                <li className="mb-2 hover:text-white"><a href="#"><Link to="/blog">Blog</Link></a></li>
+                <li className="mb-2 hover:text-white"><a href="#"><Link to="/about" onClick={handleScrollToTop}>About Us</Link></a></li>
+                <li className="mb-2 hover:text-white"><a href="#"><Link to='/services' onClick={handleScrollToTop} >Services</Link></a></li>
+                <li className="mb-2 hover:text-white"><a href="#"><Link to='/contact' onClick={handleScrollToTop}>Contact</Link></a></li>
+                <li className="mb-2 hover:text-white"><a href="#"><Link to="/blog" onClick={handleScrollToTop}>Blog</Link></a></li>
               </ul>
             </div>
 
