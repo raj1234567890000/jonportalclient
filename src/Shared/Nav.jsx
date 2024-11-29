@@ -11,7 +11,7 @@ import { LogOut, User2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import carrernest from '../Assets/carrernest.jpg'
+
 //import React from 'react'
 
 const Nav = () => {
@@ -46,7 +46,7 @@ toast.success(res.data.message);
 </div>
 <div className="flex item-center justify-between mx-auto max-w-7xl h-16 mt-5 sm:flex items-center">
           <div className="flex">
-          <img src={carrernest} alt="logo" className="h-14 rounded-full"/>
+         
             <h1 className="text-2xl font-bold ml-4 mt-3 ">
               
             Career<span className="text-white">Nest</span>
