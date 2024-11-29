@@ -10,6 +10,7 @@ import UpdateProfileDialog from "./UpdateProfileDialog";
 import { useSelector } from "react-redux";
 import useGetAppliedJobs from "@/hooks/useGetAppliedJobs";
 import Footer from "./Footer";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 
 const isResume = true;
 
@@ -21,80 +22,113 @@ const Profile = () => {
   return (
     <div>
       <Nav />
-      <div className="profile">
-      <div className="max-w-4xl mx-auto bg-[#006666] text-white border border-white rounded-2xl my-5 p-8">
-        <div className="flex justify-between">
-          <div className="flex items-center gap-4 ">
-            <Avatar className="h-24 w-24 ">
-              <AvatarImage src={user?.profile.profilePhoto} />
-            </Avatar>
-            <div>
-              <h1 className="font-medium text-xl">{user?.fullname}</h1>
-              <p>{user?.profile.bio}</p>
-            </div>
-          </div>
-          <Button
-            className="text-right"
-            variant="outline"
-            onClick={() => setOpen(true)}
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+      >
+        <div className="profile">
+          {/* Profile Info Card */}
+          <motion.div
+            className="max-w-4xl mx-auto bg-[#006666] text-white border border-white rounded-2xl my-5 p-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
           >
-            <Pen />
-          </Button>
-        </div>
-        <div className="my-5">
-          <div className=" flex items-center gap-3">
-            <Mail />
-            <span>{user?.email}</span>
-          </div>
-          <div className="flex items-center gap-3 my-2">
-            <Contact />
-            <span>{user?.phoneNumber} </span>
-          </div>
-        </div>
-        <div className="my-5">
-          <h1 className="font-bold">Skills</h1>
-          <div className="flex items-center gap-1">
-            {user?.profile?.skills.length !== 0 ? (
-              user?.profile?.skills.map((item, index) => (
-                <Badge
-                  key={index}
-                  className={"text-white font-bold ml-2 mt-2"}
-                  variant="ghost"
+            <div className="flex justify-between">
+              <div className="flex items-center gap-4">
+                <Avatar className="h-24 w-24">
+                  <AvatarImage src={user?.profile.profilePhoto} />
+                </Avatar>
+                <div>
+                  <h1 className="font-medium text-xl">{user?.fullname}</h1>
+                  <p>{user?.profile.bio}</p>
+                </div>
+              </div>
+              <Button
+                className="text-right"
+                variant="outline"
+                onClick={() => setOpen(true)}
+              >
+                <Pen />
+              </Button>
+            </div>
+            <div className="my-5">
+              <div className="flex items-center gap-3">
+                <Mail />
+                <span>{user?.email}</span>
+              </div>
+              <div className="flex items-center gap-3 my-2">
+                <Contact />
+                <span>{user?.phoneNumber} </span>
+              </div>
+            </div>
+            <div className="my-5">
+              <h1 className="font-bold">Skills</h1>
+              <div className="flex items-center gap-1">
+                {user?.profile?.skills.length !== 0 ? (
+                  user?.profile?.skills.map((item, index) => (
+                    <Badge
+                      key={index}
+                      className={"text-white font-bold ml-2 mt-2"}
+                      variant="ghost"
+                    >
+                      {item}
+                    </Badge>
+                  ))
+                ) : (
+                  <span>No skills added</span>
+                )}
+              </div>
+            </div>
+
+            <div className="grid w-full max-w-sm items-center gap-1.5">
+              <Label className="text-md font-bold">Resume</Label>
+              {isResume ? (
+                <a
+                  target="_blank"
+                  href={user?.profile?.resume}
+                  className="text-white w-full hover:underline cursor-pointer"
                 >
-                  {item}
-                </Badge>
-              ))
-            ) : (
-              <span></span>
-            )}
-          </div>
-        </div>
+                  {user?.profile?.resumeOriginalName}
+                </a>
+              ) : (
+                <span>NA</span>
+              )}
+            </div>
+          </motion.div>
 
-        <div className="grid w-full max-w-sm items-center gap-1.5">
-          <Label className="text-md font-bold">Resume</Label>
-          {isResume ? (
-            <a
-              target="_blank"
-              href={user?.profile?.resume}
-              className="text-white w-full hover:underline cursor-pointer"
+          {/* Applied Jobs Section */}
+          <motion.div
+            className="max-w-4xl mx-auto bg-white rounded-2xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.h1
+              className="text-lg font-bold my-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              {user?.profile?.resumeOriginalName}
-            </a>
-          ) : (
-            <span>NA</span>
-          )}
-        </div>
-      </div>
-      <div className="max-w-4xl mx-auto bg-white  rounded-2xl ">
-        <h1 className="text-lg font-bold my-6">Applied Job</h1>
-        <div className="flex-1 h-[40vh] overflow-y-auto p-5">
-        <AppliedjobTable />
-        </div>
-      </div>
+              Applied Jobs
+            </motion.h1>
+            <motion.div
+              className="flex-1 h-[40vh] overflow-y-auto p-5"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              <AppliedjobTable />
+            </motion.div>
+          </motion.div>
 
-      <UpdateProfileDialog open={open} setOpen={setOpen} />
-      <Footer />
-    </div>
+          {/* Update Profile Dialog */}
+          <UpdateProfileDialog open={open} setOpen={setOpen} />
+
+          <Footer />
+        </div>
+      </motion.div>
     </div>
   );
 };

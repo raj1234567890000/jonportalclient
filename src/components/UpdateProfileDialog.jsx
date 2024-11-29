@@ -12,8 +12,9 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { toast } from "sonner";
 import { setLoading, setUser } from "@/Redux/authSlice";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 
-const UpdateProfileDialog = ({ open , setOpen }) => {
+const UpdateProfileDialog = ({ open, setOpen }) => {
   const { user } = useSelector((store) => store.auth);
   const { loading } = useSelector((store) => store.auth);
 
@@ -49,7 +50,7 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
       formData.append("file", input.file);
     }
     try {
-      const token=localStorage.getItem('authToken')
+      const token = localStorage.getItem('authToken');
       dispatch(setLoading(true));
       const res = await axios.post(
         `https://careernestbackend.onrender.com/api/v1/user/profile/update`,
@@ -57,25 +58,21 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            token:token
+            token: token
           },
           withCredentials: true,
         }
       );
-     // console.log(res.data.success);
       if (res) {
         dispatch(setUser(res?.data.user));
         toast.success("Profile Update Successfully");
       }
-      //console.log("update profile", res);
     } catch (error) {
-      console.log(error);
       toast.error(error.response.data.message);
     } finally {
       dispatch(setLoading(false));
     }
     setOpen(false);
-   // console.log(input);
   };
 
   return (
@@ -90,7 +87,12 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
               Update Profile
             </DialogTitle>
           </DialogHeader>
-          <form onSubmit={submitHandler}>
+          <motion.form
+            onSubmit={submitHandler}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="grid-4 gap-4 py-2">
               <div className="grid grid-cols-4 items-center gap-4 mb-5">
                 <label htmlFor="name" className="text-right text-white ml-7">
@@ -106,12 +108,12 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4  mb-5">
-                <label htmlFor="bio" className="text-right text-white  ml-7">
+                <label htmlFor="bio" className="text-right text-white ml-7">
                   Bio :
                 </label>
                 <input
                   id="bio"
-                  className="col-span-3 rounded-md h-8  mr-10"
+                  className="col-span-3 rounded-md h-8 mr-10"
                   name="bio"
                   type="text"
                   value={input.bio}
@@ -119,12 +121,12 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4  mb-5">
-                <label htmlFor="name" className="text-right text-white  ml-7">
+                <label htmlFor="email" className="text-right text-white ml-7">
                   Email :
                 </label>
                 <input
                   id="email"
-                  className="col-span-3 rounded-md h-8  mr-10"
+                  className="col-span-3 rounded-md h-8 mr-10"
                   name="email"
                   type="email"
                   value={input.email}
@@ -132,12 +134,12 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4 mb-5">
-                <label htmlFor="name" className="text-right text-white  ml-7">
+                <label htmlFor="phoneNumber" className="text-right text-white ml-7">
                   Number :
                 </label>
                 <input
-                  id="number"
-                  className="col-span-3 rounded-md h-8  mr-10"
+                  id="phoneNumber"
+                  className="col-span-3 rounded-md h-8 mr-10"
                   name="phoneNumber"
                   type="number"
                   value={input.phoneNumber}
@@ -145,12 +147,12 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4 mb-5">
-                <label htmlFor="name" className="text-right text-white  ml-7">
+                <label htmlFor="skills" className="text-right text-white ml-7">
                   Skills :
                 </label>
                 <input
                   id="skills"
-                  className="col-span-3 rounded-md h-8  mr-10"
+                  className="col-span-3 rounded-md h-8 mr-10"
                   name="skills"
                   type="text"
                   value={input.skills}
@@ -158,7 +160,7 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4 mb-5">
-                <label htmlFor="file" className="text-right text-white  ml-7">
+                <label htmlFor="file" className="text-right text-white ml-7">
                   Resume :
                 </label>
 
@@ -177,7 +179,7 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
             </div>
             <DialogFooter>
               {loading ? (
-                <Button className=" bg-gray-900 text-white  w-full my-4 cursor-not-allowed">
+                <Button className="bg-gray-900 text-white w-full my-4 cursor-not-allowed">
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Please Wait
                 </Button>
@@ -187,7 +189,7 @@ const UpdateProfileDialog = ({ open , setOpen }) => {
                 </Button>
               )}
             </DialogFooter>
-          </form>
+          </motion.form>
         </DialogContent>
       </Dialog>
     </div>
