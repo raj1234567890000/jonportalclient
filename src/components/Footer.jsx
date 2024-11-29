@@ -72,8 +72,8 @@ const Footer = () => {
             <div className="flex flex-col items-center lg:flex-row lg:justify-between text-white text-center lg:text-left">
               <p>&copy; 2024 Career Nest. All rights reserved.</p>
               <div className="mt-4 lg:mt-0">
-             <Link to="/privacypolicy">   <a href="#" className="hover:text-white mx-2">Privacy Policy</a></Link>
-             <Link to="/service">   <a href="#" className="hover:text-white mx-2">Terms of Service</a></Link>
+             <Link to="/privacypolicy">   <a href="#" className="hover:text-white mx-2 " onClick={handleScrollToTop}>Privacy Policy</a></Link>
+             <Link to="/service">   <a href="#" className="hover:text-white mx-2" onClick={handleScrollToTop}>Terms of Service</a></Link>
               </div>
             </div>
           </div>

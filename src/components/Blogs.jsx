@@ -1,6 +1,6 @@
 import Nav from "@/Shared/Nav";
 import Footer from "./Footer";
-
+import { motion } from "framer-motion";
 
 const Blogs = () => {
   const blogPosts = [
@@ -35,43 +35,63 @@ const Blogs = () => {
 
   return (
     <>
-    <Nav/>
-    <section className=" text-gray-800 py-16 px-6 lg:px-24 mt-10">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-white mb-6">Latest Blogs</h2>
-        <p className="text-lg  mb-12">
-          Stay updated with the latest tips, trends, and insights in the job market.
-        </p>
+      <Nav />
+      <section className="text-gray-800 py-16 px-6 lg:px-24 mt-10">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.h2
+            className="text-4xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Latest Blogs
+          </motion.h2>
+          <motion.p
+            className="text-lg mb-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            Stay updated with the latest tips, trends, and insights in the job market.
+          </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <div
-              key={post.id}
-              className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-            >
-              {/* Blog Image */}
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-              {/* Blog Content */}
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                  {post.title}
-                </h3>
-                <p className="mb-4">{post.description}</p>
-                <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>By {post.author}</span>
-                  <span>{post.date}</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post) => (
+              <motion.div
+                key={post.id}
+                className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                {/* Blog Image */}
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-48 object-cover"
+                />
+                {/* Blog Content */}
+                <div className="p-6">
+                  <motion.h3
+                    className="text-2xl font-semibold text-gray-900 mb-2"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    {post.title}
+                  </motion.h3>
+                  <p className="mb-4">{post.description}</p>
+                  <div className="flex items-center justify-between text-sm text-gray-500">
+                    <span>By {post.author}</span>
+                    <span>{post.date}</span>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-    <Footer/>
+      </section>
+      <Footer />
     </>
   );
 };
