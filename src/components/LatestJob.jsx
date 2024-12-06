@@ -1,10 +1,15 @@
 import { useSelector } from "react-redux";
 import LatestjobCard from "./LatestjobCard";
-
+import { motion } from "framer-motion";
 
 const LatestJob = () => {
   const { allJobs } = useSelector((store) => store.job);
-  
+
+  // Animation variants for the job cards
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 }, // Start off hidden and slightly below
+    visible: { opacity: 1, y: 0 }, // Move into place with full opacity
+  };
 
   return (
     <div className="latest-job">
@@ -17,16 +22,21 @@ const LatestJob = () => {
             <span>No Job Available</span>
           ) : (
             allJobs &&
-            allJobs
-              ?.slice(0, 6)
-              .map((job) =>
-               <>
-                <div key={job._id}>
-                    <LatestjobCard key={job._id} job={job} />
-                </div>
-               </>
-                
-              )
+            allJobs.slice(0, 6).map((job, index) => (
+              <motion.div
+                key={job._id}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible" // Trigger animation when the card comes into view
+                viewport={{ once: true, amount: 0.2 }} // Play animation once when 20% of the card is visible
+                transition={{
+                  delay: index * 0.2, // Stagger animation for each card
+                  duration: 0.5, // Duration of the animation
+                }}
+              >
+                <LatestjobCard job={job} />
+              </motion.div>
+            ))
           )}
         </div>
       </div>
