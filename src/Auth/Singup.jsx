@@ -99,7 +99,7 @@ const Singup = () => {
           <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-3">
             <motion.form
               onSubmit={submitHandler}
-              className="border rounded-md p-4 my-10 sm:w-1/3 singup-form border-white bg-[#006666] text-white"
+              className="border rounded-md p-4 my-10 sm:w-1/3 singup-form border-white bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}

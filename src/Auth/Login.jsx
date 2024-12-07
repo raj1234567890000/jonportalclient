@@ -89,7 +89,7 @@ const Login = () => {
           <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-9">
             <motion.form
               onSubmit={submitHandler}
-              className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 border border-white bg-[#006666] text-white rounded-md p-6 sm:p-8 lg:p-10 my-10 shadow-lg log"
+              className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 border border-white bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white rounded-md p-6 sm:p-8 lg:p-10 my-10 shadow-lg log"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
