@@ -140,7 +140,9 @@ const Nav = () => {
                         onClick={LogOutHandler}
                       >
                         <LogOut className="text-purple-600" />
-                        <span>Logout</span>
+                        <Link  className="hover:underline">
+                            LogOut
+                          </Link>
                       </div>
                     </div>
                   </motion.div>
