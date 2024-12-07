@@ -80,6 +80,9 @@ const Nav = () => {
                 <Link to="/browser" className="hover:text-yellow-300">
                   Browser
                 </Link>
+                <Link to="/helpus" className="hover:text-yellow-300">
+                  Help
+                </Link>
               </>
             ) : null}
           </nav>
@@ -175,6 +178,7 @@ const Nav = () => {
                         <Link to="/">Home</Link>
                         <Link to="/job">Jobs</Link>
                         <Link to="/browser">Browser</Link>
+                        <Link to="/helpus">Help</Link>
                       </>
                     ) : null}
                   </nav>

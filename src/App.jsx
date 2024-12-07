@@ -22,6 +22,7 @@ import OurServices from './components/OurServices'
 import Blogs from './components/Blogs'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import Service from './components/Services'
+import HelpUs from './components/HelpUs'
 
 
 
@@ -80,6 +81,10 @@ function App() {
   {
     path:'/service',
     element:<Service/>
+  },
+  {
+    path:'/helpus',
+    element:<HelpUs/>
   },
 
   //admin statt here
