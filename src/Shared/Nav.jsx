@@ -12,29 +12,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
-
+import carrernest from "../Assets/carrernest.jpg";
 
 const Nav = () => {
   const { user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const LogOutHandler = async (token) => {
-    try {
-      const res = await axios.get(`https://careernestbackend.onrender.com/api/v1/user/logout`, {
-        withCredentials: true,
-      });
-      if (res.data.success) {
-        localStorage.removeItem("authToken", token);
-        dispatch(setUser(null));
-        navigate("/login");
-        toast.success(res.data.message);
-      }
-    } catch (err) {
+  const LogOutHandler=async(token)=>{
+    try{
+  const res= await axios.get(`https://careernestbackend.onrender.com/api/v1/user/logout`,{withCredentials:true})
+  if(res.data.sucess){
+    localStorage.removeItem("authToken",token)
+  dispatch(setUser(null));
+  navigate('/login')
+  toast.success(res.data.message);
+  }
+    }catch(err){
       console.log(err);
-      toast.error(err.response?.data?.message);
+      toast.error(err.response.data.message)
     }
-  };
+  
+  } 
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -53,7 +52,11 @@ const Nav = () => {
         <div className="container mx-auto max-w-7xl px-4 py-5 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-          
+            <img
+              src={carrernest}
+              alt="CareerNest Logo"
+              className="h-10 rounded-full"
+            />
             <h1 className="ml-2 text-3xl font-normal">
               Career<span className="text-white">Nest</span>
             </h1>
