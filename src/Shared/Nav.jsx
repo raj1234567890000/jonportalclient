@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
-import carrernest from "../Assets/carrernest.jpg";
+
 
 const Nav = () => {
   const { user } = useSelector((store) => store.auth);
@@ -52,11 +52,7 @@ const Nav = () => {
         <div className="container mx-auto max-w-7xl px-4 py-5 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img
-              src={carrernest}
-              alt="CareerNest Logo"
-              className="h-10 rounded-full"
-            />
+           
             <h1 className="ml-2 text-3xl font-normal">
               Career<span className="text-white">Nest</span>
             </h1>
