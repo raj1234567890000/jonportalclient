@@ -52,7 +52,7 @@ const Herosection = () => {
           transition={{ duration: 1 }}
         >
           Search, Apply & <br className="hidden md:block" /> Get your{" "}
-          <span className="text-yellow-300">Dream Job</span>
+          <span className="text-orange-400">Dream Job</span>
         </motion.h1>
 
         <motion.p
@@ -63,7 +63,7 @@ const Herosection = () => {
         >
           Our job portal connects job seekers with employers, streamlining the
           hiring process and making it efficient and engaging.{" "}
-          <span ref={el} className="font-bold text-yellow-300"></span>
+          <span ref={el} className="font-bold text-orange-400"></span>
         </motion.p>
 
         <motion.div
@@ -79,7 +79,7 @@ const Herosection = () => {
             onChange={(e) => setQuery(e.target.value)}
           />
           <Button
-            className="rounded-r-full bg-yellow-300 text-black p-3 md:p-4 hover:bg-yellow-400"
+            className="rounded-r-full bg-orange-400 text-black p-3 md:p-4 hover:bg-orange-300"
             onClick={searchJobHandler}
           >
             <Search className="h-5 w-5 md:h-6 md:w-6" />

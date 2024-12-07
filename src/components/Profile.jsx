@@ -30,7 +30,7 @@ const Profile = () => {
         <div className="profile">
           {/* Profile Info Card */}
           <motion.div
-            className="max-w-4xl mx-auto bg-[#006666] text-white border border-white rounded-2xl my-5 p-8"
+            className="max-w-4xl mx-auto  border border-white rounded-2xl my-5 p-8 shadow-2xl mt-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -70,7 +70,7 @@ const Profile = () => {
                   user?.profile?.skills.map((item, index) => (
                     <Badge
                       key={index}
-                      className={"text-white font-bold ml-2 mt-2"}
+                      className={"font-bold ml-2 mt-2"}
                       variant="ghost"
                     >
                       {item}
@@ -88,7 +88,7 @@ const Profile = () => {
                 <a
                   target="_blank"
                   href={user?.profile?.resume}
-                  className="text-white w-full hover:underline cursor-pointer"
+                  className=" w-full hover:underline cursor-pointer"
                 >
                   {user?.profile?.resumeOriginalName}
                 </a>
