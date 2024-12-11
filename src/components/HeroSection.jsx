@@ -1,10 +1,10 @@
 import { Search } from "lucide-react";
 import { Button } from "./ui/button";
-import { useEffect, useRef, useState } from "react";
+import {useState } from "react";
 import { useDispatch } from "react-redux";
 import { setSearchedQuery } from "@/Redux/jobSlices";
 import { useNavigate } from "react-router-dom";
-import Typed from "typed.js";
+
 import { motion } from "framer-motion"; // Import motion from framer-motion
 
 const Herosection = () => {
@@ -18,20 +18,7 @@ const Herosection = () => {
   };
 
   // Typed.js for typing animation
-  const el = useRef(null);
-
-  useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: ["Find Your Perfect Job", "Start Your Career Today"],
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true,
-    });
-
-    return () => {
-      typed.destroy(); // Cleanup Typed.js instance
-    };
-  }, []);
+ 
 
   return (
     <div className="herosection bg-gradient-to-br  py-16 px-4">
@@ -62,8 +49,8 @@ const Herosection = () => {
           transition={{ duration: 1, delay: 0.3 }}
         >
           Our job portal connects job seekers with employers, streamlining the
-          hiring process and making it efficient and engaging.{" "}
-          <span ref={el} className="font-bold text-orange-400"></span>
+          hiring process and making it efficient and engaging.<span className="text-orange-500">Find Your Perfect Job Start Your Career Today.</span>
+         
         </motion.p>
 
         <motion.div

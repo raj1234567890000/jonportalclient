@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import Footer from "./Footer";
+import Nav from "@/Shared/Nav";
 
 const HelpUs = () => {
   const fadeInUp = {
@@ -16,6 +18,8 @@ const HelpUs = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <div className="w-full min-h-screen bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-600 text-white">
       <motion.div
         initial="initial"
@@ -114,6 +118,8 @@ const HelpUs = () => {
         </motion.div>
       </motion.div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
