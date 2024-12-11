@@ -39,7 +39,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className="Footer w-full bg-gradient-to-b from-purple-600 via-pink-500 to-orange-400">
+    <div className="Footers w-full bg-gradient-to-b from-purple-600 via-pink-500 to-orange-400">
       <footer
         ref={footerRef}
         className=" text-white py-8 foot"
