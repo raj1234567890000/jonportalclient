@@ -97,7 +97,9 @@ const Contact = () => {
           </form>
         </motion.div>
       </div>
+      <div className="contactFooter">
       <Footer />
+      </div>
     </>
   );
 };

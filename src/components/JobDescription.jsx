@@ -74,7 +74,7 @@ const JobDescription = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="max-w-7xl mx-auto my-10 bg-white shadow-lg rounded-lg p-6"
+      className="max-w-7xl mx-auto my-10 bg-white shadow-lg rounded-lg p-6 jobdescription"
     >
       <motion.div
         className="flex items-center justify-between"
@@ -104,7 +104,7 @@ const JobDescription = () => {
         <Button
           onClick={isApplied ? null : applyJobHandler}
           disabled={isApplied}
-          className={`rounded-lg ${
+          className={`rounded-lg decriptionbutton  ${
             isApplied
               ? "bg-gray-400 cursor-not-allowed text-white"
               : "bg-purple-600 text-white hover:bg-purple-700"
@@ -135,7 +135,7 @@ const JobDescription = () => {
           <span className="font-bold">Location:</span>
           <span className="pl-4 font-normal">{singleJob?.location}</span>
         </p>
-        <p>
+        <p className="description">
           <span className="font-bold">Description:</span>
           <span className="pl-4 font-normal">{singleJob?.description}</span>
         </p>

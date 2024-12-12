@@ -12,6 +12,12 @@ body{
   margin-bottom: 40px;
 
 }
+.description{
+  margin: 0 auto; 
+  text-align: justify; 
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+ }
 @media only screen and (max-width: 400px) {
     body {
        
@@ -82,22 +88,29 @@ body{
  }
  .help{
 
-  width: 600px;
+  width: 650px;
  }
  .about{
 width:600px;
 margin-left: 20px;
  }
+ .browser{
+  margin-left: 20px;
+  width: 600px;
+ }
  .service{
   width: 600px;
-  margin-left: 20px;
  }
- .allconatct{
+ .contact{
   width: 600px;
-  margin-left: 150px;
-  margin-top: 40px;
+  margin-left: 24px;
+  margin-top: 150px;
   margin-bottom: 40px;
  }
+ .contactFooter{
+  position: fixed;
+  bottom: 0;
+}
  .blog{
   width: 600px;
 
@@ -108,5 +121,27 @@ margin-left: 20px;
  .privacy{
   width: 600px;
  }
+ .jobs{
+  width: 600px;
+  
+ }
+ .jobdescription{
+  width: 350px;
+  font-size: 16px;
+  margin-bottom: 60px;
+ }
+ .description{
+  max-width: 600px;
+  margin: 0 auto; 
+  text-align: justify; 
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+ }
+ .decriptionbutton{
+  position:fixed; 
+  bottom:0px;
+width: 300px;
+  
+}
   }
 

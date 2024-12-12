@@ -50,7 +50,7 @@ const Jobs = () => {
       <div>
         <Nav />
 
-        <div className="max-w-7xl mx-auto mt-5">
+        <div className="max-w-7xl mx-auto mt-5 jobs">
           <motion.div
             initial="hidden"
             animate="visible"

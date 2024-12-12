@@ -38,7 +38,7 @@ const Browser = () => {
     <>
       <div>
         <Nav />
-        <div className="max-w-7xl mx-auto my-10 px-4">
+        <div className="max-w-7xl mx-auto my-10 px-4 browser">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
