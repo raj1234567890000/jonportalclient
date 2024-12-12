@@ -52,7 +52,11 @@ const Nav = () => {
         <div className="container mx-auto max-w-7xl px-4 py-5 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-           
+          <img
+              src="http://localhost:5173/src/Assets/carrernest.jpg"
+              alt="CareerNest Logo"
+              className="h-10 rounded-full"
+            />
             <h1 className="ml-2 text-3xl font-normal">
               Career<span className="">Nest</span>
             </h1>
