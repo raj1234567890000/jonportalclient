@@ -36,7 +36,7 @@ const Blogs = () => {
   return (
     <>
       <Nav />
-      <section className="text-gray-800 py-16 px-6 lg:px-24 mt-10">
+      <section className="text-gray-800 py-16 px-6 lg:px-24 ">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h2
             className="text-4xl font-bold text-white mb-6"
@@ -47,15 +47,16 @@ const Blogs = () => {
             Latest Blogs
           </motion.h2>
           <motion.p
-            className="text-lg mb-12"
+            className="text-lg mb-12 blog"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
+           
           >
             Stay updated with the latest tips, trends, and insights in the job market.
           </motion.p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 blog">
             {blogPosts.map((post) => (
               <motion.div
                 key={post.id}

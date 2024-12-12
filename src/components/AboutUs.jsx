@@ -3,16 +3,30 @@ import Footer from "./Footer";
 import { motion } from "framer-motion";
 
 const AboutUs = () => {
+  // Variants for staggered animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 }, // Delay the start of child animations
+    },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <>
       <Nav />
 
-      <section className="py-12 mt-56">
+      <section className="py-12 about">
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
           exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Heading Section */}
@@ -29,7 +43,12 @@ const AboutUs = () => {
             </motion.div>
 
             {/* Content Section */}
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+            >
               {/* Image */}
               <motion.div
                 className="flex justify-center items-center"
@@ -48,10 +67,7 @@ const AboutUs = () => {
               {/* Text Content */}
               <motion.div
                 className="flex flex-col justify-center"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                variants={childVariants}
               >
                 <h3 className="text-2xl font-bold mb-4">Who We Are</h3>
                 <p className="text-gray-600 mb-4">
@@ -60,11 +76,10 @@ const AboutUs = () => {
                 </p>
                 <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                 <p className="text-gray-600">
-                  To empower individuals and businesses through cutting-edge technologies and
-                  tailored strategies that drive growth and success.
+                  To empower individuals and businesses through cutting-edge technologies and tailored strategies that drive growth and success.
                 </p>
               </motion.div>
-            </div>
+            </motion.div>
 
             {/* Values Section */}
             <motion.div
@@ -75,49 +90,31 @@ const AboutUs = () => {
               transition={{ duration: 0.6 }}
             >
               <h3 className="text-2xl font-bold text-center mb-8">Our Core Values</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <motion.div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                variants={containerVariants}
+                initial="hidden"
+                animate="show"
+              >
                 {/* Value Cards */}
-                <motion.div
-                  className="bg-gray-800 rounded-lg p-6 text-center"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <h4 className="text-xl font-bold text-gray-300">Integrity</h4>
-                  <p className="text-gray-300 mt-2">
-                    We uphold the highest ethical standards in everything we do.
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="bg-gray-800 rounded-lg p-6 text-center"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <h4 className="text-xl font-bold text-gray-300">Innovation</h4>
-                  <p className="text-gray-300 mt-2">
-                    We embrace creativity to deliver transformative solutions.
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="bg-gray-800 rounded-lg p-6 text-center"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <h4 className="text-xl font-bold text-gray-300">Excellence</h4>
-                  <p className="text-gray-300 mt-2">
-                    We strive for exceptional quality in every project we undertake.
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="bg-gray-800 rounded-lg p-6 text-center"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <h4 className="text-xl font-bold text-gray-300">Collaboration</h4>
-                  <p className="text-gray-300 mt-2">
-                    We work together to achieve shared goals and long-lasting success.
-                  </p>
-                </motion.div>
-              </div>
+                {[
+                  { title: "Integrity", description: "We uphold the highest ethical standards in everything we do." },
+                  { title: "Innovation", description: "We embrace creativity to deliver transformative solutions." },
+                  { title: "Excellence", description: "We strive for exceptional quality in every project we undertake." },
+                  { title: "Collaboration", description: "We work together to achieve shared goals and long-lasting success." },
+                ].map((value, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-gray-800 rounded-lg p-6 text-center"
+                    variants={childVariants}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <h4 className="text-xl font-bold text-gray-300">{value.title}</h4>
+                    <p className="text-gray-300 mt-2">{value.description}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
             </motion.div>
           </div>
         </motion.div>

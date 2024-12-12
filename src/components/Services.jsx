@@ -6,9 +6,9 @@ const Service = () => {
   return (
     <>
       <Nav />
-      <section className="text-gray-800 py-16 px-6 lg:px-24">
+      <section className="text-gray-800 py-16 px-6 lg:px-24 ">
         <motion.div
-          className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8"
+          className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8 termofservices"
           initial={{ opacity: 0, y: 50 }} // Initial state: invisible and below
           animate={{ opacity: 1, y: 0 }} // Final state: visible and in place
           transition={{ duration: 0.6 }} // Smooth transition for the section

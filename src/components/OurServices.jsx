@@ -33,10 +33,12 @@ const OurServices = () => {
   return (
     <>
       <Nav />
-      <section className="text-gray-800 py-16 px-6 lg:px-24 mt-10">
+      
+      <section className="text-gray-800 py-16 px-6 lg:px-24">
+      <h1 className="text-center mt-10 font-extrabold underline text-orange-500">Our Services</h1>
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Our Services</h2>
-          <p className="text-lg text-gray-600 mb-12">
+          <p className="text-lg text-gray-600 mb-12 service">
             Explore our range of professional services designed to help your
             business grow and succeed.
           </p>
@@ -59,7 +61,7 @@ const OurServices = () => {
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center hover:shadow-xl transition-shadow duration-300"
+                className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center hover:shadow-xl transition-shadow duration-300 service"
                 variants={{
                   hidden: { opacity: 0, y: 50 }, // Start from below
                   show: { opacity: 1, y: 0 }, // Animate to normal position

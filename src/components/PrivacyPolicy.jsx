@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
       <Nav />
       <section className="text-gray-800 py-16 px-6 lg:px-24">
         <motion.div
-          className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8"
+          className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8 privacy"
           initial={{ opacity: 0, y: 50 }} // Start off-screen and hidden
           animate={{ opacity: 1, y: 0 }} // Fade in and slide up
           transition={{ duration: 0.6 }} // Duration for the animation

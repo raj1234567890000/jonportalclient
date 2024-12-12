@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import Nav from "@/Shared/Nav";
 
@@ -20,7 +21,7 @@ const HelpUs = () => {
   return (
     <>
     <Nav/>
-    <div className="w-full min-h-screen bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-600 text-white">
+    <div className="w-full min-h-screen bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-600 text-white help">
       <motion.div
         initial="initial"
         animate="animate"
@@ -109,12 +110,9 @@ const HelpUs = () => {
             Lets work together to make the job market more accessible and
             transparent.
           </p>
-          <a
-            href="/contact"
-            className="bg-indigo-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-indigo-600 transition-all"
-          >
-            Contact Us
-          </a>
+         
+            <Link to='/contact' className="bg-indigo-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-indigo-600 transition-all">Contact Us</Link>
+         
         </motion.div>
       </motion.div>
     </div>

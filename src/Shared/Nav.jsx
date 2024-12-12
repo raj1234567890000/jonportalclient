@@ -167,7 +167,7 @@ const Nav = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <nav className="flex flex-col gap-4 p-4">
+                  <nav className="flex flex-col gap-4 p-4 text-orange-500 text-center">
                     {user && user.role === "recruiter" ? (
                       <>
                         <Link to="/admin/companies">Companies</Link>
