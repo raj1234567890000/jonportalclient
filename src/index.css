@@ -78,8 +78,7 @@ body{
     
   }
  .profile{
-  width:505px;
-  margin-left: 10px;
+  width: 640px;
   
  }
  .browser{
@@ -104,8 +103,7 @@ margin-left: 20px;
  .contact{
   width: 600px;
   margin-left: 24px;
-  margin-top: 150px;
-  margin-bottom: 40px;
+  margin-top: 40px;
  }
  .contactFooter{
   position: fixed;
