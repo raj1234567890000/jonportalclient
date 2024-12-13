@@ -26,7 +26,7 @@ dispatch(setSearchJobByText(input))
 <div>
         <Nav/>
     
-    <div className="max-w-6xl mx-auto my-10 jobbs ">
+    <div className="max-w-6xl mx-auto my-10 jobbs">
         <div className="flex items-center justify-between my-5">
         <Input 
         className="w-fit"
