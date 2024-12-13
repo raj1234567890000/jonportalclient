@@ -34,15 +34,15 @@ body{
       }
       
       .login{
-        width: 100%;
-        margin-left: 142px;
-        margin-top: 70px;
+        width:500px;
+        margin-left: 80px;
+        margin-top: 90px;
         font-size: 30px;
       }
-      .singup{
-        width: 400px;
-        margin-top: 70px;
-      margin-left: 125px;
+      .signup{
+        width: 500px;
+        margin-top: 50px;
+      margin-left: 32px;
       font-size: large;
       }
       .login-sinup-button{

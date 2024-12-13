@@ -10,9 +10,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { motion } from "framer-motion"; // Import motion from framer-motion
+import { motion } from "framer-motion";
 
-const Singup = () => {
+const Signup = () => {
   const [input, setInput] = useState({
     fullname: "",
     phoneNumber: "",
@@ -94,41 +94,45 @@ const Singup = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="singup"
+          className="signup flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-12"
         >
-          <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-3">
+          <div className="max-w-3xl mx-auto w-full">
             <motion.form
               onSubmit={submitHandler}
-              className="border rounded-md p-4 my-10 sm:w-1/3 singup-form border-white bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white"
+              className="w-full sm:w-3/4 md:w-1/2 lg:w-1/2 border rounded-xl p-8 sm:p-10 bg-white shadow-2xl text-gray-800 ml-52 mb-10 signup"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
               <motion.h1
-                className="font-bold text-xl mb-5 text-white hh1"
+                className="font-extrabold text-3xl mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600"
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                Sign up
+                Sign Up
               </motion.h1>
 
-              <div className="progress-container">
-                <progress id="progress-bar" className="w-full" value={progress} max="100"></progress>
+              <div className="relative w-full mb-6">
+                <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className="h-2 bg-gradient-to-r from-green-400 to-blue-500"
+                    style={{ width: `${progress}%` }}
+                  ></div>
+                </div>
               </div>
 
               <motion.div
-                className="my-2"
+                className="mb-4"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="ml-2">Full Name</Label>
+                <Label className="block text-sm font-semibold">Full Name</Label>
                 <Input
-                  id="fullname"
                   type="text"
                   placeholder="Enter your full name"
-                  className="mt-1 text-black"
+                  className="mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
                   name="fullname"
                   value={input.fullname}
                   onChange={changeEventHandler}
@@ -136,17 +140,16 @@ const Singup = () => {
               </motion.div>
 
               <motion.div
-                className="my-2"
+                className="mb-4"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="ml-2">Email</Label>
+                <Label className="block text-sm font-semibold">Email</Label>
                 <Input
                   type="email"
-                  placeholder="Enter your Email"
-                  className="mt-1 text-black"
-                  id="email"
+                  placeholder="Enter your email"
+                  className="mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
                   name="email"
                   value={input.email}
                   onChange={changeEventHandler}
@@ -154,17 +157,16 @@ const Singup = () => {
               </motion.div>
 
               <motion.div
-                className="my-2"
+                className="mb-4"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="ml-2">Phone number</Label>
+                <Label className="block text-sm font-semibold">Phone Number</Label>
                 <Input
                   type="text"
-                  placeholder="+918907857453"
-                  className="mt-1 text-black"
-                  id="phoneNumber"
+                  placeholder="Enter your phone number"
+                  className="mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
                   name="phoneNumber"
                   value={input.phoneNumber}
                   onChange={changeEventHandler}
@@ -172,17 +174,16 @@ const Singup = () => {
               </motion.div>
 
               <motion.div
-                className="my-2"
+                className="mb-4"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="ml-2">Password</Label>
+                <Label className="block text-sm font-semibold">Password</Label>
                 <Input
                   type="password"
                   placeholder="Enter your password"
-                  className="mt-1 text-black"
-                  id="password"
+                  className="mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
                   name="password"
                   value={input.password}
                   onChange={changeEventHandler}
@@ -190,76 +191,77 @@ const Singup = () => {
               </motion.div>
 
               <motion.div
-                className="flex items-center justify-between"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <RadioGroup className="flex items-center gap-4 my-5">
-                  <div className="flex items-center space-x-2">
-                    <Input
-                      type="radio"
-                      name="role"
-                      id="role"
-                      value="student"
-                      className="cursor-pointer"
-                      checked={input.role === "student"}
-                      onChange={changeEventHandler}
-                    />
-                    <Label htmlFor="r1">Student</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Input
-                      type="radio"
-                      name="role"
-                      id="role"
-                      value="recruiter"
-                      className="cursor-pointer"
-                      checked={input.role === "recruiter"}
-                      onChange={changeEventHandler}
-                    />
-                    <Label htmlFor="r2">Recruiter</Label>
-                  </div>
-                </RadioGroup>
-              </motion.div>
-
-              <motion.div
-                className="flex items-center gap-2"
+                className="mb-6"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label htmlFor="r1">Profile</Label>
+                <Label className="block text-sm font-semibold">Upload Profile Picture</Label>
                 <Input
-                  id="file"
-                  accept="image/*"
                   type="file"
-                  className="cursor-pointer"
+                  accept="image/*"
+                  className="mt-2 w-full cursor-pointer"
                   onChange={changeFileHandler}
                 />
               </motion.div>
 
+              <motion.div
+                className="flex justify-between items-center mb-6"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <RadioGroup className="flex items-center gap-4">
+                  <div className="flex items-center space-x-2">
+                    <Input
+                      type="radio"
+                      name="role"
+                      value="student"
+                      checked={input.role === "student"}
+                      onChange={changeEventHandler}
+                      className="cursor-pointer"
+                    />
+                    <Label>Student</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Input
+                      type="radio"
+                      name="role"
+                      value="recruiter"
+                      checked={input.role === "recruiter"}
+                      onChange={changeEventHandler}
+                      className="cursor-pointer"
+                    />
+                    <Label>Recruiter</Label>
+                  </div>
+                </RadioGroup>
+              </motion.div>
+
               {loading ? (
-                <Button className="w-full my-4 bg-gray-900 text-white cursor-not-allowed">
+                <Button className="w-full bg-gray-300 text-gray-600 cursor-not-allowed" disabled>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Please Wait
                 </Button>
               ) : (
-                <Button className="bg-black text-white w-full my-4" disabled={progress !== 100}>
-                  Sign up
+                <Button
+                  className={`w-full py-3 rounded-lg text-white font-bold transition-all ${
+                    progress === 100
+                      ? "bg-purple-600 hover:bg-purple-700"
+                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  }`}
+                  disabled={progress !== 100}
+                >
+                  Sign Up
                 </Button>
               )}
 
               <motion.span
-                className="text-sm"
+                className="text-center block mt-4 text-sm text-gray-600"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                Already have an account?
-                <Link to="/login" className="text-blue-600">
-                  Login
-                </Link>
+                Already have an account? <Link to="/login" className="text-purple-600 underline">Login</Link>
               </motion.span>
             </motion.form>
           </div>
@@ -269,4 +271,4 @@ const Singup = () => {
   );
 };
 
-export default Singup;
+export default Signup;
