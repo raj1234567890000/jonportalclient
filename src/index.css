@@ -110,10 +110,9 @@ margin-left: 20px;
   margin-left: 24px;
   margin-top: 40px;
  }
- .contactFooter{
-  position: fixed;
-  bottom: 0;
-}
+ .contactFooters{
+  display: none;
+ }
  .blog{
   width: 600px;
 

@@ -97,7 +97,7 @@ const Contact = () => {
           </form>
         </motion.div>
       </div>
-      <div className="contactFooter">
+      <div className="contactFooters">
       <Footer />
       </div>
     </>
