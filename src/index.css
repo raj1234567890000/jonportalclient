@@ -18,6 +18,11 @@ body{
   word-wrap: break-word;
   overflow-wrap: anywhere;
  }
+ .jobdescription{
+  width: 830px;
+  height: 50vh;
+
+}
 @media only screen and (max-width: 400px) {
     body {
        
