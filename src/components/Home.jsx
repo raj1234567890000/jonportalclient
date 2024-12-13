@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion"
+import Counter from "./Counter";
 
 const Home = () => {
   useGetAllJobs();
@@ -33,6 +34,7 @@ const Home = () => {
         <Herosection />
         <CateroryCarousel />
         <LatestJob/>
+        <Counter/>
         <Footer/>
                     </motion.div>
     </>
