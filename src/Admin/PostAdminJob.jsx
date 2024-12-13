@@ -19,7 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import Footer from "@/components/Footer";
+
 
 const PostAdminJob = () => {
   const [input, setInput] = useState({
@@ -80,10 +80,10 @@ const PostAdminJob = () => {
     <>
     <div>
       <Nav />
-      <div className="flex items-center justify-center w-screen my-5">
+      <div className="flex items-center justify-center w-screen my-5 postjob">
         <form
           onSubmit={submitHandler}
-          className="p-8 max-w-4xl border border-gray-200 shadow-lg rounded-md mt-44"
+          className="p-8 max-w-4xl border border-gray-200 shadow-lg rounded-md "
         >
           <div className="grid grid-cols-2 gap-2">
             <div>
@@ -96,15 +96,35 @@ const PostAdminJob = () => {
                 className="focus-visible:ring-offset-0 focus-visible:ring-0 my-1"
               />
             </div>
-            <div>
-              <Label>Description</Label>
-              <Input
-                type="text"
-                name="description"
-                value={input.description}
-                onChange={changeEventHandler}
+            <div className="mt-7 selectcompany w-7">
+            {companies.length > 0 && (
+              <Select
+                onValueChange={selectChangeHandler}
                 className="focus-visible:ring-offset-0 focus-visible:ring-0 my-1"
-              />
+              >
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue
+                    placeholder="Select a Company"
+                    className="bg-black"
+                  />
+                </SelectTrigger>
+                <SelectContent className="bg-black">
+                  <SelectGroup className="bg-black text-white cursor-pointer">
+                    {companies.map((company, index) => {
+                      return (
+                        <SelectItem
+                          key={index}
+                          value={company?.name?.toLowerCase()}
+                          className="bg-black text-white cursor-pointer"
+                        >
+                          {company.name}
+                        </SelectItem>
+                      );
+                    })}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            )}
             </div>
             <div>
               <Label>Requirements</Label>
@@ -166,34 +186,19 @@ const PostAdminJob = () => {
                 className="focus-visible:ring-offset-0 focus-visible:ring-0 my-1"
               />
             </div>
-            {companies.length > 0 && (
-              <Select
-                onValueChange={selectChangeHandler}
-                className="focus-visible:ring-offset-0 focus-visible:ring-0 my-1"
-              >
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue
-                    placeholder="Select a Company"
-                    className="bg-black"
-                  />
-                </SelectTrigger>
-                <SelectContent className="bg-black">
-                  <SelectGroup className="bg-black text-white cursor-pointer">
-                    {companies.map((company, index) => {
-                      return (
-                        <SelectItem
-                          key={index}
-                          value={company?.name?.toLowerCase()}
-                          className="bg-black text-white cursor-pointer"
-                        >
-                          {company.name}
-                        </SelectItem>
-                      );
-                    })}
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-            )}
+            <div>
+        <Label>Descrption</Label>
+           
+        <textarea type="text"
+                name="description"
+                value={input.description}
+                onChange={changeEventHandler}
+                className="focus-visible:ring-offset-0 focus-visible:ring-0 my-1 jobdescription border rounded-xl">
+        
+            
+           </textarea>
+       </div>
+           
           </div>
           {loading ? (
             <Button className="w-full my-4 bg-black text-white">
@@ -213,7 +218,7 @@ const PostAdminJob = () => {
         </form>
       </div>
     </div>
-    <Footer/>
+ 
     </>
   );
 };

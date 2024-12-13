@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { setAllApplicants } from "@/Redux/applicationSlice"
 import { toast } from "sonner"
+import Footer from "@/components/Footer"
 
 
 const Applicants = () => {
@@ -37,14 +38,19 @@ fetchAllApplicants();
 // eslint-disable-next-line
     },[])
   return (
+    <>
     <div>
      <Nav/>
-     <div className="max-w-7xl mx-auto mt-24">
+     <div className="max-w-7xl mx-auto applicants">
         <h1 className="font-bold text-xl my-5">Applicants ({applicants?.applications?.length})</h1>
         <ApplicantsTable/>
 
      </div>
     </div>
+    <div className="contactFooter">
+      <Footer />
+      </div>
+    </>
   )
 }
 

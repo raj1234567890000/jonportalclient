@@ -141,5 +141,38 @@ margin-left: 20px;
 width: 300px;
   
 }
+.company{
+  width: 650px;
+}
+.createcomapny{
+  width: 625px;
+  margin-top: -80px;
+  margin-left: 20px;
+  
+}
+.comapnyname{
+margin-left: 20px;
+margin-top: 10px; 
+}
+.companysetup{
+  width: 625px;
+  margin-left: 30px;
+}
+.jobbs{
+  width: 650px;
+}
+.applicants{
+  width: 650px;
+}
+.postjob{
+  width: 650px;
+}
+.selectcompany{
+  margin-top: 40px;
+}
+.jobdescription{
+  width: 585px;
+
+}
   }
 
