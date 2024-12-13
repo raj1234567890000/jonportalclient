@@ -18,7 +18,7 @@ body{
   word-wrap: break-word;
   overflow-wrap: anywhere;
  }
-@media only screen and (min-width: 400px) {
+@media only screen and (max-width: 400px) {
     body {
        
         font-size: 25px;
