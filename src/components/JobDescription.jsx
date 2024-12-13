@@ -74,7 +74,7 @@ const JobDescription = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="max-w-7xl mx-auto my-10 bg-white shadow-lg rounded-lg p-6 jobdescription"
+      className="max-w-7xl mx-auto my-10 bg-white shadow-lg rounded-lg p-6"
     >
       <motion.div
         className="flex items-center justify-between"
