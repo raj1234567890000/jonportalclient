@@ -128,18 +128,18 @@ margin-left: 20px;
   width: 600px;
   
  }
- .jobdescription{
-  width: 350px;
-  font-size: 16px;
-  margin-bottom: 60px;
- }
- .description{
-  max-width: 600px;
-  margin: 0 auto; 
-  text-align: justify; 
-  word-wrap: break-word;
-  overflow-wrap: anywhere;
- }
+ .jobdescriptions{
+  width: 650px;
+  
+}
+ .decriptionbutton{
+  position:fixed; 
+  bottom:0px;
+width: 300px;
+margin-left: 140px;
+margin-top: 50px;
+  
+}
  .decriptionbutton{
   position:fixed; 
   bottom:0px;
