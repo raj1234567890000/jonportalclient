@@ -118,11 +118,11 @@ const Login = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="ml-2 text-gray-700 dark:text-gray-300">Email</Label>
+                <Label className="ml-2 text-gray-700 dark:text-gray-300 authtext">Email</Label>
                 <Input
                   type="email"
                   placeholder="Enter your Email"
-                  className="mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-900 dark:text-white"
+                  className="mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-900 dark:text-white input-text"
                   id="email"
                   name="email"
                   value={input.email}
@@ -136,11 +136,11 @@ const Login = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="ml-2 text-gray-700 dark:text-gray-300">Password</Label>
+                <Label className="ml-2 text-gray-700 dark:text-gray-300 authtext">Password</Label>
                 <Input
                   type="password"
                   placeholder="Enter your password"
-                  className="mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-900 dark:text-white"
+                  className="mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-900 dark:text-white input-text"
                   id="password"
                   name="password"
                   value={input.password}
@@ -154,7 +154,7 @@ const Login = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <RadioGroup className="flex items-center gap-4">
+                <RadioGroup className="flex items-center gap-4 authtext">
                   <div className="flex items-center space-x-2">
                     <Input
                       type="radio"
@@ -165,7 +165,7 @@ const Login = () => {
                       checked={input.role === "student"}
                       onChange={changeEventHandler}
                     />
-                    <Label htmlFor="r1" className="text-gray-700 dark:text-gray-300">Student</Label>
+                    <Label htmlFor="r1" className="text-gray-700 dark:text-gray-300 authtext">Student</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Input
@@ -173,23 +173,23 @@ const Login = () => {
                       name="role"
                       id="role"
                       value="recruiter"
-                      className="cursor-pointer focus:ring-blue-500"
+                      className="cursor-pointer focus:ring-blue-500 authtext"
                       checked={input.role === "recruiter"}
                       onChange={changeEventHandler}
                     />
-                    <Label htmlFor="r2" className="text-gray-700 dark:text-gray-300">Recruiter</Label>
+                    <Label htmlFor="r2" className="text-gray-700 dark:text-gray-300 authtext">Recruiter</Label>
                   </div>
                 </RadioGroup>
               </motion.div>
 
               {loading ? (
-                <Button className="w-full py-2 bg-gray-700 text-white flex items-center justify-center gap-2" disabled>
+                <Button className="w-full py-2 bg-gray-700 text-white flex items-center justify-center gap-2 auth-button" disabled>
                   <Loader2 className="h-5 w-5 animate-spin" />
                   Please Wait
                 </Button>
               ) : (
                 <Button
-                  className={`w-full py-2 rounded-lg transition-colors ${progress === 100 ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
+                  className={`w-full py-2 rounded-lg transition-colors auth-button ${progress === 100 ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
                   disabled={progress !== 100}
                 >
                   Login
@@ -197,7 +197,7 @@ const Login = () => {
               )}
 
               <motion.span
-                className="text-sm text-center block mt-4 text-gray-700 dark:text-gray-300"
+                className="text-center block mt-4 text-gray-700 dark:text-gray-300 "
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
