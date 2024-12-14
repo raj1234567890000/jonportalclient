@@ -20,6 +20,7 @@ const Profile = () => {
   const { user } = useSelector((store) => store.auth);
 
   return (
+    <>
     <div>
       <Nav />
       <motion.div
@@ -30,7 +31,7 @@ const Profile = () => {
         <div className="profile">
           {/* Profile Info Card */}
           <motion.div
-            className="max-w-4xl mx-auto  border border-white rounded-2xl my-5 p-8 shadow-2xl mt-10"
+            className="max-w-4xl mx-auto   border border-white rounded-2xl my-5 p-8 shadow-2xl mt-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -65,12 +66,12 @@ const Profile = () => {
             </div>
             <div className="my-5">
               <h1 className="font-bold">Skills</h1>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 badge">
                 {user?.profile?.skills.length !== 0 ? (
                   user?.profile?.skills.map((item, index) => (
                     <Badge
                       key={index}
-                      className={"font-bold ml-2 mt-2"}
+                      className={"font-bold ml-2 mt-2 profilebadge"}
                       variant="ghost"
                     >
                       {item}
@@ -88,7 +89,7 @@ const Profile = () => {
                 <a
                   target="_blank"
                   href={user?.profile?.resume}
-                  className=" w-full hover:underline cursor-pointer"
+                  className=" w-full hover:underline cursor-pointer resume"
                 >
                   {user?.profile?.resumeOriginalName}
                 </a>
@@ -100,7 +101,7 @@ const Profile = () => {
 
           {/* Applied Jobs Section */}
           <motion.div
-            className="max-w-4xl mx-auto bg-white rounded-2xl"
+            className="max-w-4xl mx-auto bg-white  border border-white rounded-2xl shadow-2xl mb-10 appliedtable"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -114,7 +115,7 @@ const Profile = () => {
               Applied Jobs
             </motion.h1>
             <motion.div
-              className="flex-1 h-[40vh] overflow-y-auto p-5"
+              className="flex-1 h-[40vh] overflow-y-auto p-5 "
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4 }}
@@ -126,10 +127,15 @@ const Profile = () => {
           {/* Update Profile Dialog */}
           <UpdateProfileDialog open={open} setOpen={setOpen} />
 
-          <Footer />
+         
         </div>
       </motion.div>
+      
     </div>
+    <div className="profileFooter">
+      <Footer />
+      </div>
+    </>
   );
 };
 

@@ -78,25 +78,25 @@ const Footer = () => {
               <div className="flex space-x-4">
                 <a
                   href="https://www.facebook.com/login.php"
-                  className="hover:text-white text-xl transform transition-transform hover:scale-125"
+                  className="hover:text-white text-xl transform transition-transform hover:scale-125 follow"
                 >
                   <i className="fab fa-facebook-f"></i>
                 </a>
                 <a
                   href="https://www.twitter.com"
-                  className="hover:text-white text-xl transform transition-transform hover:scale-125"
+                  className="hover:text-white text-xl transform transition-transform hover:scale-125 follow"
                 >
                   <i className="fab fa-twitter"></i>
                 </a>
                 <a
                   href="https://www.instagram.com"
-                  className="hover:text-white text-xl transform transition-transform hover:scale-125"
+                  className="hover:text-white text-xl transform transition-transform hover:scale-125 follow"
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
                 <a
                   href="https://www.linkedin.com"
-                  className="hover:text-white text-xl transform transition-transform hover:scale-125"
+                  className="hover:text-white text-xl transform transition-transform hover:scale-125 follow"
                 >
                   <i className="fab fa-linkedin-in"></i>
                 </a>

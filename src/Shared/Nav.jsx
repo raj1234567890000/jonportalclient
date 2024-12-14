@@ -7,11 +7,12 @@ import {
 } from "@/components/ui/popover";
 import { setUser } from "@/Redux/authSlice";
 import axios from "axios";
-import { LogOut, Menu, User2 } from "lucide-react";
+import { LogOut, User2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
+//import carrernest from "../Assets/carrernest.jpg";
 
 
 const Nav = () => {
@@ -52,35 +53,35 @@ const Nav = () => {
         <div className="container mx-auto max-w-7xl px-4 py-5 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-        
-            <h1 className="ml-2 text-3xl font-normal">
+          
+            <h1 className="ml-2 text-3xl font-normal textlogo">
               Career<span className="">Nest</span>
             </h1>
           </div>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="md:flex items-center gap-8 navlink ">
             {user && user.role === "recruiter" ? (
               <>
-                <Link to="/admin/companies" className="hover:text-yellow-300">
+                <Link to="/admin/companies" className="hover:text-yellow-300 navlinks">
                   Companies
                 </Link>
-                <Link to="/admin/jobs" className="hover:text-yellow-300">
+                <Link to="/admin/jobs" className="hover:text-yellow-300 navlinks">
                   Jobs
                 </Link>
               </>
             ) : user && user.role === "student" ? (
               <>
-                <Link to="/" className="hover:text-yellow-300">
+                <Link to="/" className="hover:text-yellow-300 navlinks">
                   Home
                 </Link>
-                <Link to="/job" className="hover:text-yellow-300">
+                <Link to="/job" className="hover:text-yellow-300 navlinks">
                   Jobs
                 </Link>
-                <Link to="/browser" className="hover:text-yellow-300">
+                <Link to="/browser" className="hover:text-yellow-300 navlinks">
                   Browser
                 </Link>
-                <Link to="/helpus" className="hover:text-yellow-300">
+                <Link to="/helpus" className="hover:text-yellow-300 navlinks">
                   Help
                 </Link>
               </>
@@ -88,16 +89,16 @@ const Nav = () => {
           </nav>
 
           {/* User Profile or Login/Register */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 ">
             {!user ? (
               <div className="flex gap-4">
                 <Link to="/login">
-                  <Button className="bg-white text-purple-700 hover:bg-purple-700 hover:text-white">
+                  <Button className="bg-white text-purple-700 hover:bg-purple-700 hover:text-white userlogin">
                     Login
                   </Button>
                 </Link>
                 <Link to="/singup">
-                  <Button className="bg-white text-purple-700 hover:bg-purple-700 hover:text-white">
+                  <Button className="bg-white text-purple-700 hover:bg-purple-700 hover:text-white userlogin">
                     Register
                   </Button>
                 </Link>
@@ -105,7 +106,7 @@ const Nav = () => {
             ) : (
               <Popover>
                 <PopoverTrigger>
-                  <Avatar className="cursor-pointer">
+                  <Avatar className="cursor-pointer navprofile">
                     <AvatarImage src={user?.profile?.profilePhoto} />
                     <AvatarFallback>Profile</AvatarFallback>
                   </Avatar>
@@ -154,38 +155,8 @@ const Nav = () => {
           </div>
 
           {/* Mobile Menu */}
-          <div className="md:hidden">
-            <Popover>
-              <PopoverTrigger>
-                <Button variant="ghost">
-                  <Menu className="text-white" />
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="bg-white text-black w-64 shadow-lg">
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <nav className="flex flex-col gap-4 p-4 text-orange-500 text-center">
-                    {user && user.role === "recruiter" ? (
-                      <>
-                        <Link to="/admin/companies">Companies</Link>
-                        <Link to="/admin/jobs">Jobs</Link>
-                      </>
-                    ) : user && user.role === "student" ? (
-                      <>
-                        <Link to="/">Home</Link>
-                        <Link to="/job">Jobs</Link>
-                        <Link to="/browser">Browser</Link>
-                        <Link to="/helpus">Help</Link>
-                      </>
-                    ) : null}
-                  </nav>
-                </motion.div>
-              </PopoverContent>
-            </Popover>
-          </div>
+          
+        
         </div>
       </motion.div>
     </>

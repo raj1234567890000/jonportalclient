@@ -67,7 +67,7 @@ const Jobs = () => {
             </motion.div>
 
             {/* Job List */}
-            <div className="flex-1 h-[88vh] overflow-y-auto p-5 bg-gray-50 shadow-lg rounded-lg">
+            <div className="flex-1 h-[88vh] overflow-y-auto p-5 bg-gray-50 shadow-lg rounded-lg jobpverflow">
               {filterJobs && filterJobs.length <= 0 ? (
                 <motion.div
                   initial="hidden"
@@ -93,7 +93,7 @@ const Jobs = () => {
                         variants={jobCardVariants}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="bg-white shadow-md rounded-lg hover:shadow-lg transition duration-300"
+                        className="bg-white shadow-md rounded-lg hover:shadow-lg transition duration-300 jobs"
                       >
                         <Job job={job} />
                       </motion.div>
@@ -104,7 +104,9 @@ const Jobs = () => {
           </motion.div>
         </div>
       </div>
+      <div className="jobFooter">
       <Footer />
+      </div>
     </>
   );
 };

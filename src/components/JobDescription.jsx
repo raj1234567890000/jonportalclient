@@ -7,6 +7,8 @@ import { setSingleJob } from "@/Redux/jobSlices";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
+import Nav from "@/Shared/Nav";
+import Footer from "./Footer";
 
 const JobDescription = () => {
   const params = useParams();
@@ -70,6 +72,8 @@ const JobDescription = () => {
   }, [jobId, dispatch, user?._id]);
 
   return (
+    <>
+    <Nav/>
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -161,6 +165,10 @@ const JobDescription = () => {
         </p>
       </motion.div>
     </motion.div>
+    <div className="jobdescripton">
+      <Footer />
+      </div>
+    </>
   );
 };
 

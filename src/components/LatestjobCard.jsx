@@ -28,14 +28,14 @@ const LatestjobCard = ({job}) => {
             {job?.description.slice(0,100)}...
           </p>
         </div>
-        <div className="flex items-center gap-2 mt-4 ml-16">
-          <Badge className={"text-blue-700 font-bold"} variant="ghost">
+        <div className="flex items-center gap-2 mt-4 ml-16 latestjob-badge">
+          <Badge className={"text-blue-700 font-bold latestjob-badge"} variant="ghost">
            {job?.position} Position
           </Badge>
-          <Badge className={"text-[#F83002] font-bold"} variant="ghost">
+          <Badge className={"text-[#F83002] font-bold latestjob-badge"} variant="ghost">
             {job?.jobType}
           </Badge>
-          <Badge className={"text-[#7209b7] font-bold"} variant="ghost">
+          <Badge className={"text-[#7209b7] font-bold latestjob-badge"} variant="ghost">
             {job?.salary}LPA
           </Badge>
         </div>
