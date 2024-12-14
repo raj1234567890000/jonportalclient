@@ -133,7 +133,7 @@ const Nav = () => {
                       {user && user.role === "student" && (
                         <div className="flex items-center gap-2 ">
                           <User2 className="text-purple-600" />
-                          <Link to="/profile" className="hover:underline">
+                          <Link to="/profile" className="hover:underline view">
                             View Profile
                           </Link>
                         </div>
@@ -143,7 +143,7 @@ const Nav = () => {
                         onClick={LogOutHandler}
                       >
                         <LogOut className="text-purple-600" />
-                        <Link  className="hover:underline">
+                        <Link  className="hover:underline view">
                             LogOut
                           </Link>
                       </div>

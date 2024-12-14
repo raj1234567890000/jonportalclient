@@ -141,6 +141,10 @@ body{
  .navprofile{
   width: 700px;
    }
+   .view{
+    font-size: 25px;
+    
+   }
  .profileFooter{
   position: fixed;
   bottom: 0;
