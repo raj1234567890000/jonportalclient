@@ -138,6 +138,9 @@ body{
  width: 1000px;
   
  }
+ .navprofile{
+  width: 700px;
+   }
  .profileFooter{
   position: fixed;
   bottom: 0;

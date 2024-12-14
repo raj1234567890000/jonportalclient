@@ -106,7 +106,7 @@ const Nav = () => {
             ) : (
               <Popover>
                 <PopoverTrigger>
-                  <Avatar className="cursor-pointer navprofile">
+                  <Avatar className="cursor-pointer">
                     <AvatarImage src={user?.profile?.profilePhoto} />
                     <AvatarFallback>Profile</AvatarFallback>
                   </Avatar>
@@ -117,7 +117,7 @@ const Nav = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="flex items-center gap-4 p-4">
+                    <div className="flex items-center gap-4 p-4 navprofile">
                       <Avatar className="cursor-pointer">
                         <AvatarImage src={user?.profile?.profilePhoto} />
                         <AvatarFallback>Profile</AvatarFallback>
@@ -131,7 +131,7 @@ const Nav = () => {
                     </div>
                     <div className="p-4">
                       {user && user.role === "student" && (
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 ">
                           <User2 className="text-purple-600" />
                           <Link to="/profile" className="hover:underline">
                             View Profile
