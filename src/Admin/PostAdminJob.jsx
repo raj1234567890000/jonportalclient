@@ -193,7 +193,7 @@ const PostAdminJob = () => {
                 name="description"
                 value={input.description}
                 onChange={changeEventHandler}
-                className="focus-visible:ring-offset-0 focus-visible:ring-0 my-1 jobdescription border rounded-xl">
+                className="focus-visible:ring-offset-0 focus-visible:ring-0 my-1 jobdescription border h-96 rounded-sm">
         
             
            </textarea>
