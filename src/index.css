@@ -36,7 +36,7 @@ body{
 
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
     body {
        
         font-size: 35px;
@@ -58,8 +58,8 @@ body{
         font-size: 35px;
       }
       .login{
-        width:850px;
-        margin-left: 80px;
+        width:700px;
+        margin-left: 150px;
         margin-top: 90px;
         font-size: 40px;
       }
@@ -78,10 +78,10 @@ body{
 
       }
       .signup{
-        width: 825px;
+        width: 600px;
         margin-top: 50px;
-      margin-left: 32px;
-      font-size: large;
+      margin-left: 100px;
+      font-size: 40px;
       }
       .login-sinup-button{
         margin-right: 15px;
@@ -261,6 +261,9 @@ margin-top: 10px;
 .jobdescription{
   width: 830px;
 
+}
+.forget{
+  font-size: 12px;
 }
 
   }

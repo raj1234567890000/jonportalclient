@@ -23,10 +23,12 @@ import Blogs from './components/Blogs'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import Service from './components/Services'
 import HelpUs from './components/HelpUs'
+import ForgotPassword from './Auth/Forgot'
 
 
 
 function App() {
+
 
  const appRouter=createBrowserRouter([
   {
@@ -41,6 +43,10 @@ function App() {
   {
     path:'/singup',
     element:<Singup/>
+  },
+  {
+    path:'/forgetpassword',
+    element:<ForgotPassword/>
   },
   {
     path:'/job',

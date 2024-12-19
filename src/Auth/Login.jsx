@@ -195,6 +195,10 @@ const Login = () => {
                   Login
                 </Button>
               )}
+                          
+<div className="text-center text-blue-500 hover:underline">
+<Link to="/forgetpassword">Forget Password</Link>
+</div>
 
               <motion.span
                 className="text-center block mt-4 text-gray-700 dark:text-gray-300 "
@@ -202,7 +206,7 @@ const Login = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                Don’t have an account? <Link to="/signup" className="text-blue-500 hover:underline">Signup</Link>
+                Don’t have an account? <Link to="/singup" className="text-blue-500 hover:underline">Signup</Link>
               </motion.span>
             </motion.form>
           </div>
