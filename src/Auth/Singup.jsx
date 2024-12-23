@@ -128,7 +128,7 @@ const Signup = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="block text-sm font-semibold">Full Name</Label>
+                <Label className="block text-sm  authtext">Full Name</Label>
                 <Input
                   type="text"
                   placeholder="Enter your full name"
@@ -145,7 +145,7 @@ const Signup = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="block text-sm font-semibold">Email</Label>
+                <Label className="block text-sm  authtext">Email</Label>
                 <Input
                   type="email"
                   placeholder="Enter your email"
@@ -162,7 +162,7 @@ const Signup = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="block text-sm font-semibold">Phone Number</Label>
+                <Label className="block text-sm  authtext">Phone Number</Label>
                 <Input
                   type="text"
                   placeholder="Enter your phone number"
@@ -179,7 +179,7 @@ const Signup = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="block text-sm font-semibold">Password</Label>
+                <Label className="block text-sm  authtext">Password</Label>
                 <Input
                   type="password"
                   placeholder="Enter your password"
@@ -196,7 +196,7 @@ const Signup = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="block text-sm font-semibold">Upload Profile Picture</Label>
+                <Label className="block text-sm  authtext">Upload Profile Picture</Label>
                 <Input
                   type="file"
                   accept="image/*"

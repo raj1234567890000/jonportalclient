@@ -196,8 +196,8 @@ const Login = () => {
                 </Button>
               )}
                           
-<div className="text-center">
-<Button className="w-full py-2 rounded-lg transition-colors bg-blue-500 hover:bg-blue-600 text-white"><Link to="/forgetpassword">Forget Password</Link></Button>
+                          <div className="text-center">
+<Button onClick={()=>navigate("/forgetpassword")} className="w-full py-2 rounded-lg transition-colors bg-blue-500 hover:bg-blue-600 text-white">Forget Password</Button>
 </div>
 
               <motion.span
