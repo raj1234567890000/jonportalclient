@@ -189,15 +189,15 @@ const Login = () => {
                 </Button>
               ) : (
                 <Button
-                  className={`w-full py-2 rounded-lg transition-colors auth-button ${progress === 100 ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
+                  className={`w-full py-2 rounded-lg transition-colors auth-button ${progress === 100 ? "bg-blue-500 hover:bg-blue-600 text-white" : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
                   disabled={progress !== 100}
                 >
                   Login
                 </Button>
               )}
                           
-<div className="text-center text-blue-500 hover:underline">
-<Link to="/forgetpassword">Forget Password</Link>
+                          <div className="text-center">
+<Button className="w-full py-2 rounded-lg transition-colors bg-blue-500 hover:bg-blue-600 text-white"><Link to="/forgetpassword">Forget Password</Link></Button>
 </div>
 
               <motion.span
