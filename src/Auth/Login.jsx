@@ -118,7 +118,7 @@ const Login = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="ml-2 text-gray-950 dark:text-gray-300 authtext">Email</Label>
+                <Label className="ml-2  authtext">Email</Label>
                 <Input
                   type="email"
                   placeholder="Enter your Email"
@@ -136,7 +136,7 @@ const Login = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="ml-2 text-gray-950 dark:text-gray-300 authtext">Password</Label>
+                <Label className="ml-2  authtext">Password</Label>
                 <Input
                   type="password"
                   placeholder="Enter your password"
@@ -165,7 +165,7 @@ const Login = () => {
                       checked={input.role === "student"}
                       onChange={changeEventHandler}
                     />
-                    <Label htmlFor="r1" className="text-gray-950 dark:text-gray-300 authtext">Student</Label>
+                    <Label htmlFor="r1" className=" authtext">Student</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Input
@@ -177,7 +177,7 @@ const Login = () => {
                       checked={input.role === "recruiter"}
                       onChange={changeEventHandler}
                     />
-                    <Label htmlFor="r2" className="text-gray-950 dark:text-gray-300 authtext">Recruiter</Label>
+                    <Label htmlFor="r2" className=" authtext">Recruiter</Label>
                   </div>
                 </RadioGroup>
               </motion.div>
@@ -201,7 +201,7 @@ const Login = () => {
 </div>
 
               <motion.span
-                className="text-center block mt-4 text-gray-950 dark:text-gray-300 "
+                className="text-center block mt-4  "
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
