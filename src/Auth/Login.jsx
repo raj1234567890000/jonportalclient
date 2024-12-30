@@ -189,7 +189,7 @@ const Login = () => {
                 </Button>
               ) : (
                 <Button
-                  className={`auth-button w-full py-2 rounded-lg transition-colors auth-button ${progress === 100 ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
+                  className={`auth-button w-full py-2 rounded-lg transition-colors auth-button ${progress === 100 ? "bg-blue-500 hover:bg-blue-600 text-white" : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
                   disabled={progress !== 100}
                 >
                   Login
