@@ -99,7 +99,7 @@ const Signup = () => {
           <div className="max-w-4xl mx-auto w-full">
             <motion.form
               onSubmit={submitHandler}
-              className="w-full sm:w-3/4 md:w-1/2 lg:w-1/2 border rounded-xl p-8 sm:p-10 bg-white shadow-2xl text-gray-800 ml-52 mb-10 signup signupform"
+              className="w-full sm:w-3/4 md:w-1/2 lg:w-1/2 border rounded-xl p-8 sm:p-10 bg-white shadow-2xl text-gray-800 ml-52 mb-10  signupform"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -244,9 +244,9 @@ const Signup = () => {
                 </Button>
               ) : (
                 <Button
-                  className={`w-full py-3 rounded-lg text-white font-bold transition-all ${
+                  className={`auth-button w-full py-3 rounded-lg text-white font-bold transition-all ${
                     progress === 100
-                      ? "bg-purple-600 hover:bg-purple-700"
+                      ? "bg-blue-500 hover:bg-blue-600 text-white"
                       : "bg-gray-300 text-gray-500 cursor-not-allowed"
                   }`}
                   disabled={progress !== 100}
