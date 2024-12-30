@@ -96,7 +96,7 @@ const Signup = () => {
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="signup flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-12"
         >
-          <div className="max-w-3xl mx-auto w-full">
+          <div className="max-w-4xl mx-auto w-full">
             <motion.form
               onSubmit={submitHandler}
               className="w-full sm:w-3/4 md:w-1/2 lg:w-1/2 border rounded-xl p-8 sm:p-10 bg-white shadow-2xl text-gray-800 ml-52 mb-10 signup signupform"
