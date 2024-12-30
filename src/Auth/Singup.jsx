@@ -261,7 +261,7 @@ const Signup = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                Already have an account? <Link to="/login" className="text-purple-600 underline">Login</Link>
+                Already have an account? <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
               </motion.span>
             </motion.form>
           </div>
