@@ -94,12 +94,12 @@ const Signup = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="signup flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-12 ml-40"
+          className="signup flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto mt-12"
         >
-          <div className="max-w-4xl mx-auto w-full">
+          <div className="max-w-3xl mx-auto w-full">
             <motion.form
               onSubmit={submitHandler}
-              className="w-full sm:w-3/4 md:w-1/2 lg:w-1/2 border rounded-xl p-8 sm:p-10 bg-white shadow-2xl text-gray-800 ml-52 mb-10 signupform"
+              className="w-full sm:w-3/4 md:w-1/2 lg:w-1/2 border rounded-xl p-8 sm:p-10 bg-white shadow-2xl text-gray-800 ml-52 mb-10 signup signupform"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -128,11 +128,11 @@ const Signup = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="block text-sm  authtext ">Full Name</Label>
+                <Label className="block text-sm  authtext">Full Name</Label>
                 <Input
                   type="text"
                   placeholder="Enter your full name"
-                  className=" input-text mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500 "
+                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
                   name="fullname"
                   value={input.fullname}
                   onChange={changeEventHandler}
@@ -149,7 +149,7 @@ const Signup = () => {
                 <Input
                   type="email"
                   placeholder="Enter your email"
-                  className=" input-text mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
+                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
                   name="email"
                   value={input.email}
                   onChange={changeEventHandler}
@@ -166,7 +166,7 @@ const Signup = () => {
                 <Input
                   type="text"
                   placeholder="Enter your phone number"
-                  className=" input-text mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
+                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
                   name="phoneNumber"
                   value={input.phoneNumber}
                   onChange={changeEventHandler}
@@ -196,7 +196,7 @@ const Signup = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="block text-sm authtext">Upload Profile Picture</Label>
+                <Label className="block text-sm  authtext">Upload Profile Picture</Label>
                 <Input
                   type="file"
                   accept="image/*"
@@ -221,7 +221,7 @@ const Signup = () => {
                       onChange={changeEventHandler}
                       className="cursor-pointer"
                     />
-                    <Label className="authtext">Student</Label>
+                    <Label>Student</Label>
                   </div>
                   <div className=" input-text flex items-center space-x-2">
                     <Input
@@ -232,7 +232,7 @@ const Signup = () => {
                       onChange={changeEventHandler}
                       className="cursor-pointer"
                     />
-                    <Label className="authtext">Recruiter</Label>
+                    <Label>Recruiter</Label>
                   </div>
                 </RadioGroup>
               </motion.div>
@@ -244,9 +244,9 @@ const Signup = () => {
                 </Button>
               ) : (
                 <Button
-                  className={`auth-button w-full py-3 rounded-lg text-white font-bold transition-all ${
+                  className={`w-full py-3 rounded-lg text-white font-bold transition-all ${
                     progress === 100
-                      ? "bg-blue-500 hover:bg-blue-600 text-white"
+                      ? "bg-purple-600 hover:bg-purple-700"
                       : "bg-gray-300 text-gray-500 cursor-not-allowed"
                   }`}
                   disabled={progress !== 100}
@@ -256,12 +256,12 @@ const Signup = () => {
               )}
 
               <motion.span
-                className="text-center block mt-4  text-gray-600"
+                className="text-center block mt-4 text-sm text-gray-600"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                Already have an account? <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
+                Already have an account? <Link to="/login" className="text-purple-600 underline">Login</Link>
               </motion.span>
             </motion.form>
           </div>

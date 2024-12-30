@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { motion } from "framer-motion"; // Import motion from framer-motion
-import { useAuth0 } from "@auth0/auth0-react";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -29,7 +28,6 @@ const Login = () => {
   const dispatch = useDispatch();
   const { loading, user } = useSelector((store) => store.auth);
   const [progress, setProgress] = useState(0);
-  const { loginWithRedirect } = useAuth0();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -120,11 +118,11 @@ const Login = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="ml-2 text-gray-700 dark:text-gray-300 authtext">Email</Label>
+                <Label className="ml-2  authtext">Email</Label>
                 <Input
                   type="email"
                   placeholder="Enter your Email"
-                  className="mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-900 dark:text-white input-text"
+                  className="input-text mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500  dark:text-white input-text"
                   id="email"
                   name="email"
                   value={input.email}
@@ -138,11 +136,11 @@ const Login = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Label className="ml-2 text-gray-700 dark:text-gray-300 authtext">Password</Label>
+                <Label className="ml-2  authtext">Password</Label>
                 <Input
                   type="password"
                   placeholder="Enter your password"
-                  className="mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-900 dark:text-white input-text"
+                  className="input-text mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500  dark:text-white input-text"
                   id="password"
                   name="password"
                   value={input.password}
@@ -167,7 +165,7 @@ const Login = () => {
                       checked={input.role === "student"}
                       onChange={changeEventHandler}
                     />
-                    <Label htmlFor="r1" className="text-gray-700 dark:text-gray-300 authtext">Student</Label>
+                    <Label htmlFor="r1" className=" authtext">Student</Label>
                   </div>
                   <div className="input-text flex items-center space-x-2">
                     <Input
@@ -179,7 +177,7 @@ const Login = () => {
                       checked={input.role === "recruiter"}
                       onChange={changeEventHandler}
                     />
-                    <Label htmlFor="r2" className="text-gray-700 dark:text-gray-300 authtext">Recruiter</Label>
+                    <Label htmlFor="r2" className=" authtext">Recruiter</Label>
                   </div>
                 </RadioGroup>
               </motion.div>
@@ -190,31 +188,26 @@ const Login = () => {
                   Please Wait
                 </Button>
               ) : (
-                <Button 
-                  className={`w-full py-2 rounded-lg transition-colors auth-button ${progress === 100 ? "bg-blue-500 hover:bg-blue-600 text-white" : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
+                <Button
+                  className={`auth-button w-full py-2 rounded-lg transition-colors auth-button ${progress === 100 ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
                   disabled={progress !== 100}
                 >
                   Login
                 </Button>
               )}
-              <div>
-                <Button onClick={() => loginWithRedirect()} className="auth-button w-full py-2 rounded-lg transition-colors bg-blue-500 hover:bg-blue-600 text-white">
-                  Continue with Google
-                </Button>
-              </div>
-<div className="text-center ">
+                          
+                          <div className="text-center">
 <Button onClick={()=>navigate("/forgetpassword")} className="auth-button w-full py-2 rounded-lg transition-colors bg-blue-500 hover:bg-blue-600 text-white">Forget Password</Button>
 </div>
+
               <motion.span
-                className="text-center block mt-4 text-gray-700 dark:text-gray-300 "
+                className="text-center block mt-4  "
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
                 Don’t have an account? <Link to="/singup" className="text-blue-500 hover:underline">Signup</Link>
-
               </motion.span>
-            
             </motion.form>
           </div>
         </motion.div>
