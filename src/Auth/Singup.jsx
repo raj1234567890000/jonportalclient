@@ -132,7 +132,7 @@ const Signup = () => {
                 <Input
                   type="text"
                   placeholder="Enter your full name"
-                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
+                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500  "
                   name="fullname"
                   value={input.fullname}
                   onChange={changeEventHandler}
@@ -149,7 +149,7 @@ const Signup = () => {
                 <Input
                   type="email"
                   placeholder="Enter your email"
-                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
+                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                   name="email"
                   value={input.email}
                   onChange={changeEventHandler}
@@ -166,7 +166,7 @@ const Signup = () => {
                 <Input
                   type="text"
                   placeholder="Enter your phone number"
-                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
+                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                   name="phoneNumber"
                   value={input.phoneNumber}
                   onChange={changeEventHandler}
@@ -183,7 +183,7 @@ const Signup = () => {
                 <Input
                   type="password"
                   placeholder="Enter your password"
-                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500"
+                  className="input-text mt-2 w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                   name="password"
                   value={input.password}
                   onChange={changeEventHandler}
@@ -219,9 +219,9 @@ const Signup = () => {
                       value="student"
                       checked={input.role === "student"}
                       onChange={changeEventHandler}
-                      className=" authtext cursor-pointer"
+                      className="cursor-pointer focus:ring-blue-500"
                     />
-                    <Label>Student</Label>
+                    <Label htmlFor="r1" className=" authtext">Student</Label>
                   </div>
                   <div className=" input-text flex items-center space-x-2">
                     <Input
@@ -230,9 +230,9 @@ const Signup = () => {
                       value="recruiter"
                       checked={input.role === "recruiter"}
                       onChange={changeEventHandler}
-                      className=" authtext cursor-pointer"
+                      className="cursor-pointer focus:ring-blue-500 authtext"
                     />
-                    <Label>Recruiter</Label>
+                    <Label htmlFor="r2" className=" authtext">Recruiter</Label>
                   </div>
                 </RadioGroup>
               </motion.div>
