@@ -219,7 +219,7 @@ const Signup = () => {
                       value="student"
                       checked={input.role === "student"}
                       onChange={changeEventHandler}
-                      className="cursor-pointer"
+                      className=" authtext cursor-pointer"
                     />
                     <Label>Student</Label>
                   </div>
@@ -230,7 +230,7 @@ const Signup = () => {
                       value="recruiter"
                       checked={input.role === "recruiter"}
                       onChange={changeEventHandler}
-                      className="cursor-pointer"
+                      className=" authtext cursor-pointer"
                     />
                     <Label>Recruiter</Label>
                   </div>
@@ -256,7 +256,7 @@ const Signup = () => {
               )}
 
               <motion.span
-                className="text-center block mt-4 text-sm text-gray-600"
+                className="text-center block mt-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}

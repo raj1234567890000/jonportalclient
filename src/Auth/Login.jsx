@@ -122,7 +122,7 @@ const Login = () => {
                 <Input
                   type="email"
                   placeholder="Enter your Email"
-                  className="input-text mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500  dark:text-white input-text"
+                  className="input-text mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500   input-text"
                   id="email"
                   name="email"
                   value={input.email}
@@ -140,7 +140,7 @@ const Login = () => {
                 <Input
                   type="password"
                   placeholder="Enter your password"
-                  className="input-text mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500  dark:text-white input-text"
+                  className="input-text mt-1 w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500   input-text"
                   id="password"
                   name="password"
                   value={input.password}
