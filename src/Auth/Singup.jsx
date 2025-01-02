@@ -211,7 +211,7 @@ const Signup = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <RadioGroup className="flex items-center gap-4">
+                <RadioGroup className="flex items-center gap-4 authtext">
                   <div className="input-text flex items-center space-x-2">
                     <Input
                       type="radio"
