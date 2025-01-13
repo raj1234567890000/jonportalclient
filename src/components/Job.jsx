@@ -59,8 +59,8 @@ const daysAgoFunction=(mongodbTime)=>{
           </Badge>
         </div>
         <div className="flex items-center gap-4 mt-4">
-        <Button  variant="outline"  onClick={() => navigate(`/description/${job?._id}`)}>Details</Button>
-            <Button className="bg-[#7209b7] text-white" >Save For Later</Button>
+        <Button  variant="outline" className="w-60 bg-orange-600 text-white hover:bg-orange-500" onClick={() => navigate(`/description/${job?._id}`)}>Details</Button>
+           
         </div>
    
     </div>
