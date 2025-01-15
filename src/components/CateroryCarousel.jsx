@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "./ui/button";
 import {
   Carousel,
@@ -11,18 +11,12 @@ import { useNavigate } from "react-router-dom";
 import { setSearchedQuery } from "@/Redux/jobSlices";
 import { motion } from "framer-motion";
 
-const category = [
-  "Frontend Developer",
-  "Backend Developer",
-  "Full Stack Developer",
-  "DevOps Engineer",
-  "Graphic Designer",
-  "Data Scientist",
-];
+
 
 const CateroryCarousel = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { allJobs } = useSelector((store) => store.job);
 
   const searchJobHandler = (query) => {
     dispatch(setSearchedQuery(query));
@@ -49,7 +43,7 @@ const CateroryCarousel = () => {
         </h2>
         <Carousel className="flex flex-wrap justify-center">
           <CarouselContent className="flex flex-wrap gap-4 justify-center">
-            {category.map((cat, index) => (
+            { allJobs &&  allJobs.map((cat, index) => (
               <CarouselItem
                 key={index}
                 className="flex-none w-[90%] sm:w-[45%] md:w-[30%] lg:w-[20%] text-center"
@@ -63,9 +57,9 @@ const CateroryCarousel = () => {
                   <Button
                     variant="outline"
                     className="rounded-full px-6 py-3 text-base md:text-lg bg-white text-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-lg"
-                    onClick={() => searchJobHandler(cat)}
+                    onClick={() => searchJobHandler(cat?.title)}
                   >
-                    {cat}
+                    {cat?.title}
                   </Button>
                 </motion.div>
               </CarouselItem>

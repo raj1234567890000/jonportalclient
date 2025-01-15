@@ -50,11 +50,11 @@ const Jobs = () => {
       <div>
         <Nav />
 
-        <div className="max-w-7xl mx-auto mt-5 jobs">
+        <div className=" jobs">
           <motion.div
             initial="hidden"
             animate="visible"
-            className="flex gap-5"
+            className=" gap-5"
           >
             {/* Filter Card */}
             <motion.div
@@ -93,7 +93,7 @@ const Jobs = () => {
                         variants={jobCardVariants}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="bg-white shadow-md rounded-lg hover:shadow-lg transition duration-300 jobs"
+                        className="bg-white shadow-md rounded-lg hover:shadow-lg transition duration-300  jobs"
                       >
                         <Job job={job} />
                       </motion.div>

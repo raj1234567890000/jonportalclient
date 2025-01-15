@@ -107,7 +107,7 @@ const Footer = () => {
           {/* Footer Bottom */}
           <div className="border-t border-gray-700 mt-8 pt-6">
             <div className="flex flex-col items-center lg:flex-row lg:justify-between text-white text-center lg:text-left">
-              <p className="text-sm">© 2024 Career Nest. All rights reserved.</p>
+              <p className="text-sm">© 2024 NextCareer. All rights reserved.</p>
               <div className="mt-4 lg:mt-0">
                 <Link to="/privacypolicy">
                   <span

@@ -55,7 +55,7 @@ const Nav = () => {
           <div className="flex items-center">
           
             <h1 className="ml-2 text-3xl font-normal textlogo">
-              Career<span className="">Nest</span>
+              Next<span className="">Career</span>
             </h1>
           </div>
 
